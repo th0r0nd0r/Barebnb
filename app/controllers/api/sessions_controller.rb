@@ -3,12 +3,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    if params[:user][:email].length >= 1
-      user = User.find_by_email(params[:user][:email])
-      params[:user][:username] = user.username
-    end
     @user = User.find_by_credentials(
-      params[:user][:username],
+      params[:user][:email],
       params[:user][:password]
     )
 

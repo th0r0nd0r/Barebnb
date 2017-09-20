@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       password: '',
-      email: ''
+      email: '',
+      img_url: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -15,23 +16,16 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user);
+    this.props.signup(user);
   }
 
   navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
-    }
-  }
-
-  message() {
-    if (this.props.formType === 'login') {
-      return <h3 className="login-message">Hey there you can login with either your email or password</h3>;
-    } else {
-      return <h3 className="signup-message">Gimme that sweet info</h3>;
-    }
+      return (
+        <div>
+          <h5>Already have an account?</h5>
+          <Link to="/login">Login</Link>
+        </div>
+      );
   }
 
   update(field) {
@@ -44,10 +38,8 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} id="session-form">
-          Yo we got vans on vans out here come on check it out
+          Signup
           <br/>
-          How about you {this.props.formType} or {this.navLink()}
-          {this.message()}
           <div>
             <label>Username:
               <input type="text" value={this.state.username}
@@ -62,11 +54,15 @@ class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
               />
             </label>
+            <label>Profile Image:
+              <input type="text" value={this.state.img_url}
+                onChange={this.update('img_url')}/>
+            </label>
             <br />
-            <input type="submit" value="Submit" />
+            {this.navLink()}
+            <input type="submit" value="Sign Up" />
         </div>
         </form>
       </div>
@@ -74,4 +70,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SignupForm);
