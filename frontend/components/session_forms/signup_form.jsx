@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 const customStyles = {
 overlay : {
   position          : 'fixed',
+  display: 'flex',
   top               : 0,
   left              : 0,
   right             : 0,
@@ -12,10 +13,13 @@ overlay : {
   backgroundColor   : 'rgba(255, 255, 255, 0.75)'
 },
 content : {
+
   position                   : 'absolute',
+  width                      : '450px',
+  height : 'auto',
   top                        : '200px',
-  left                       : '200px',
-  right                      : '200px',
+  left : '50%',
+  transform: 'translate(-50%, 0)',
   bottom                     : '200px',
   border                     : '1px solid #ccc',
   background                 : '#fff',
@@ -88,31 +92,24 @@ class SignupForm extends React.Component {
           style={customStyles}
           contentLabel="Signup Modal"
         >
-          <form className="header-text" onSubmit={this.handleSubmit} id="session-form">
-            Signup
+          <form className="session-form" onSubmit={this.handleSubmit} id="session-form">
             <br/>
-            <div>
-              <label className="header-text" >Username:
-                <input type="text" value={this.state.username}
+            <div className="session-div">
+                <input className="input-field" type="text" placeholder="Username" value={this.state.username}
                   onChange={this.update('username')}/>
-              </label>
-              <label className="header-text" >Email:
-                <input type='text' value={this.state.email}
-                  onChange={this.update('email')}/>
-              </label>
               <br/>
-              <label className="header-text" >Password:
-                <input type="password"
+                <input className="input-field" type='text' placeholder="Email" value={this.state.email}
+                  onChange={this.update('email')}/>
+              <br/>
+                <input className="input-field" placeholder="Password" type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />
-              </label>
-              <label className="header-text" >Profile Image:
-                <input type="text" value={this.state.img_url}
+              <br/>
+              <input className="input-field" placeholder="Link to Profile Image" type="text" value={this.state.img_url}
                   onChange={this.update('img_url')}/>
-              </label>
               <br />
-              <input className="header-text" type="submit" value="Sign Up" />
+              <input className="session-submit-button" type="submit" value="Sign Up" />
             </div>
           </form>
         </Modal>

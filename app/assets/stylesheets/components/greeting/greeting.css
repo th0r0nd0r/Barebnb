@@ -1,7 +1,6 @@
 .session-buttons {
   display: flex;
   justify-content: space-between;
-  width: 100px;
 }
 
 .logged-in {

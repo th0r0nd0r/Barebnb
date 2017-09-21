@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 const customStyles = {
 overlay : {
   position          : 'fixed',
+  display: 'flex',
   top               : 0,
   left              : 0,
   right             : 0,
@@ -12,10 +13,13 @@ overlay : {
   backgroundColor   : 'rgba(255, 255, 255, 0.75)'
 },
 content : {
+
   position                   : 'absolute',
+  width                      : '450px',
+  height                     : 'auto',
   top                        : '200px',
-  left                       : '200px',
-  right                      : '200px',
+  left                       : '50%',
+  transform                  : 'translate(-50%, 0)',
   bottom                     : '200px',
   border                     : '1px solid #ccc',
   background                 : '#fff',
@@ -91,23 +95,18 @@ class LoginForm extends React.Component {
           contentLabel="Login Modal"
         >
 
-          <form className="header-text login-button" onSubmit={this.handleSubmit} id="session-form">
-            Login
+          <form className="session-form" onSubmit={this.handleSubmit} id="session-form">
             <br/>
-            <div>
-              <label className="header-text">Email:
-                <input type='text' value={this.state.email}
+            <div className="session-div">
+                <input className="input-field" type='text' placeholder='Email'
                   onChange={this.update('email')}/>
-              </label>
               <br/>
-              <label className="header-text">Password:
-                <input type="password"
+                <input className="input-field" type="password" placeholder="Password" id="password" type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />
-              </label>
               <br />
-              <input className="header-text" type="submit" value="Login" />
+              <input className="session-submit-button" type="submit" value="Login" />
             </div>
           </form>
         </Modal>

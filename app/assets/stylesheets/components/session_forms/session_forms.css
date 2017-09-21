@@ -1,0 +1,35 @@
+.input-field {
+ font-size: 20px;
+ color: gray;
+ margin-top: 15px;
+ margin-bottom: 15px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ width: 100%;
+ box-sizing: border-box;
+}
+
+.session-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.session-div {
+  height: 100%;
+  width: 90%;
+}
+
+.session-submit-button {
+  background: #f7405e;
+  font-size: 20px;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  margin-top: 15px;
+}
