@@ -1,0 +1,8 @@
+.header-title {
+  font-family: cursive;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}

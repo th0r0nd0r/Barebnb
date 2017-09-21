@@ -10,15 +10,19 @@ import {
   HashRouter
 } from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
+import Header from './header/header';
 
 
 
 const App = () => (
   <div>
-    <header>
-    <h1>watup my dudes its Altbnb!</h1>
-    <GreetingContainer />
-    </header>
+    <Header />
+    <div className="main">
+
+    </div>
+    <div className="footer">
+
+    </div>
   </div>
 );
 

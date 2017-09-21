@@ -22,4 +22,5 @@ document.addEventListener('DOMContentLoaded',() => {
   window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={ store } />, root);
+
 });

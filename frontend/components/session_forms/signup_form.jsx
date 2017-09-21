@@ -13,10 +13,10 @@ overlay : {
 },
 content : {
   position                   : 'absolute',
-  top                        : '40px',
-  left                       : '40px',
-  right                      : '40px',
-  bottom                     : '40px',
+  top                        : '200px',
+  left                       : '200px',
+  right                      : '200px',
+  bottom                     : '200px',
   border                     : '1px solid #ccc',
   background                 : '#fff',
   overflow                   : 'auto',
@@ -55,6 +55,9 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+    if (user.img_url === '') {
+      delete user.img_url;
+    }
     this.props.signup(user);
     this.closeModal();
   }
