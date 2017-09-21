@@ -1,20 +1,41 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Modal from 'react-modal';
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       password: '',
-      email: ''
+      email: '',
+      modalIsOpen: false
     };
+
+    this.openModal = this.openModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  // afterOpenModal() {
+  //   this.subtitle.style.color = '#f00';
+  // }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
     this.props.login(user);
+    this.closeModal();
   }
 
   navLink() {
@@ -35,26 +56,35 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} id="session-form">
-          Login
-          <br/>
-          <div>
-            <label>Email:
-              <input type='text' value={this.state.email}
-                onChange={this.update('email')}/>
-            </label>
+        <button onClick={this.openModal}>Login</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Login Modal"
+        >
+
+          <form onSubmit={this.handleSubmit} id="session-form">
+            Login
             <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
-            </label>
-            <br />
-            {this.navLink()}
-            <input type="submit" value="Login" />
-        </div>
-        </form>
+            <div>
+              <label>Email:
+                <input type='text' value={this.state.email}
+                  onChange={this.update('email')}/>
+              </label>
+              <br/>
+              <label>Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                />
+              </label>
+              <br />
+              {this.navLink()}
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+        </Modal>
       </div>
     );
   }

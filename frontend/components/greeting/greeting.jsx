@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import LoginFormContainer from '../session_forms/login_form_container';
+import SignupFormContainer from '../session_forms/signup_form_container';
 
-const links = () => (
+const buttons = () => (
   <nav className="session-links" >
-    <Link to="/login">Login</Link>
+    <LoginFormContainer />
     <br />
-    <Link to="/signup">Sign Up</Link>
+    <SignupFormContainer />
   </nav>
 );
 
@@ -17,7 +18,7 @@ const welcomeMessage = (currentUser, logout) => (
 );
 
 const Greeting = ({currentUser, logout}) => (
-  currentUser ? welcomeMessage(currentUser, logout) : links()
+  currentUser ? welcomeMessage(currentUser, logout) : buttons()
 );
 
 export default Greeting;

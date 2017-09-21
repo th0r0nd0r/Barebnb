@@ -11,16 +11,16 @@ import {
 } from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
 
+
+
 const App = () => (
   <div>
     <header>
     <h1>watup my dudes its Altbnb!</h1>
     <GreetingContainer />
     </header>
-
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
 );
 
+// <SignupFormContainer />
 export default App;
