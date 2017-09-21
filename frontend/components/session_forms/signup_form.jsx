@@ -33,14 +33,14 @@ class SignupForm extends React.Component {
     this.closeModal();
   }
 
-  navLink() {
-      return (
-        <div>
-          <h5>Already have an account?</h5>
-          <Link to="/login">Login</Link>
-        </div>
-      );
-  }
+  // navLink() {
+  //     return (
+  //       <div>
+  //         <h5>Already have an account?</h5>
+  //         <Link to="/login">Login</Link>
+  //       </div>
+  //     );
+  // }
 
   update(field) {
     return event => this.setState({
@@ -82,7 +82,6 @@ class SignupForm extends React.Component {
                   onChange={this.update('img_url')}/>
               </label>
               <br />
-              {this.navLink()}
               <input type="submit" value="Sign Up" />
             </div>
           </form>

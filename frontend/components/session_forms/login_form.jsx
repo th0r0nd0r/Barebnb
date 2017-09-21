@@ -38,14 +38,14 @@ class LoginForm extends React.Component {
     this.closeModal();
   }
 
-  navLink() {
-      return (
-        <div>
-          <h5>Don't have an account?</h5>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      );
-  }
+  // navLink() {
+  //     return (
+  //       <div>
+  //         <h5>Don't have an account?</h5>
+  //         <Link to="/signup">Sign Up</Link>
+  //       </div>
+  //     );
+  // }
 
   update(field) {
     return event => this.setState({
@@ -80,7 +80,6 @@ class LoginForm extends React.Component {
                 />
               </label>
               <br />
-              {this.navLink()}
               <input type="submit" value="Login" />
             </div>
           </form>
