@@ -1,24 +1,49 @@
-.session-links {
+.session-buttons {
   display: flex;
   justify-content: space-between;
+  width: 100px;
 }
 
 .logged-in {
   width: 300px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .welcome-message {
   display: inline-block;
 }
 
-.logout-button {
+.session-button {
   display: inline-block;
-  margin-left: 20px;
+  /*margin-left: 20px;*/
+  border: none;
+  background-color: white;
+  color: gray;
+  /*padding: 15px;*/
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-bottom: 3px solid white;
+  margin: 0px 15px;
+}
+
+.session-button:hover {
+  border-bottom: 3px solid gray;
 }
 
 .avatar {
   width: 30px;
   height: 30px;
+  margin-left: 10px;
+}
+
+.login-button {
+  margin-right: 20px;
+}
+
+.signup-buton {
+  margin-left: 20px;
 }

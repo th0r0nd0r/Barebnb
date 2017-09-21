@@ -79,8 +79,8 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.openModal}>Signup</button>
+      <div className="modal-form">
+        <button className="session-button" onClick={this.openModal}>Signup</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -88,31 +88,31 @@ class SignupForm extends React.Component {
           style={customStyles}
           contentLabel="Signup Modal"
         >
-          <form onSubmit={this.handleSubmit} id="session-form">
+          <form className="header-text" onSubmit={this.handleSubmit} id="session-form">
             Signup
             <br/>
             <div>
-              <label>Username:
+              <label className="header-text" >Username:
                 <input type="text" value={this.state.username}
                   onChange={this.update('username')}/>
               </label>
-              <label>Email:
+              <label className="header-text" >Email:
                 <input type='text' value={this.state.email}
                   onChange={this.update('email')}/>
               </label>
               <br/>
-              <label>Password:
+              <label className="header-text" >Password:
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />
               </label>
-              <label>Profile Image:
+              <label className="header-text" >Profile Image:
                 <input type="text" value={this.state.img_url}
                   onChange={this.update('img_url')}/>
               </label>
               <br />
-              <input type="submit" value="Sign Up" />
+              <input className="header-text" type="submit" value="Sign Up" />
             </div>
           </form>
         </Modal>

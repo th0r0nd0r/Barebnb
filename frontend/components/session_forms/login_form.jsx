@@ -81,8 +81,8 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.openModal}>Login</button>
+      <div className="modal-form">
+        <button onClick={this.openModal} className="session-button">Login</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -91,23 +91,23 @@ class LoginForm extends React.Component {
           contentLabel="Login Modal"
         >
 
-          <form onSubmit={this.handleSubmit} id="session-form">
+          <form className="header-text login-button" onSubmit={this.handleSubmit} id="session-form">
             Login
             <br/>
             <div>
-              <label>Email:
+              <label className="header-text">Email:
                 <input type='text' value={this.state.email}
                   onChange={this.update('email')}/>
               </label>
               <br/>
-              <label>Password:
+              <label className="header-text">Password:
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />
               </label>
               <br />
-              <input type="submit" value="Login" />
+              <input className="header-text" type="submit" value="Login" />
             </div>
           </form>
         </Modal>
