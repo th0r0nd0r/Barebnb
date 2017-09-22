@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Spot.destroy_all
 
 demo_users = User.create([
   {
@@ -80,3 +82,22 @@ demo_users = User.create([
     img_url: 'https://i.pinimg.com/originals/75/27/e2/7527e207f80f5bd9a7679c0702792600.jpg'
   }
   ])
+
+  demo_spots = Spot.create([
+    {
+      title: "Luxury Hammock",
+      description: "Beautiful, plush free-standing hammock in a garden full of native California plants",
+      lat: 37.785983,
+      lng: -122.462808,
+      host_id: 3,
+      img_url: 'https://www.myhammock.com/prodimages/sschs1.jpg'
+    },
+    {
+      title: "Double-Decker Van Home",
+      description: "Renovated interior boasts a kitchenette and a queen-sized bunk bed setup",
+      lat: 37.745973,
+      lng: -122.456902,
+      host_id: 0,
+      img_url: 'https://i.pinimg.com/736x/7a/25/37/7a2537b3372a5f0ebd5122cd6f398ae6--vw-camper-vans-vw-vans.jpg'
+    }
+    ])
