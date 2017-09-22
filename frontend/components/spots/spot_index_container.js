@@ -5,7 +5,7 @@ import { getSpots } from '../../actions/spot_actions';
 
 const mapStateToProps = (state) => {
   return {
-    spots: state.spots
+    spots: Object.values(state.entities.spots)
   };
 };
 
