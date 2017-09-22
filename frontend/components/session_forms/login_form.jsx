@@ -38,14 +38,23 @@ class LoginForm extends React.Component {
     this.state = {
       password: '',
       email: '',
-      modalIsOpen: false
-    };
+      modalIsOpen: false,
+      demoUsers: [
+      {
+        email: 'boldlygo@enterprise.org',
+        password: 'captainslog',
+      },
+      {
+        email: 'captain@hotmail.com',
+        password: 'whynorum',
+    }]};
 
     this.openModal = this.openModal.bind(this);
     // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   openModal() {
@@ -80,6 +89,17 @@ class LoginForm extends React.Component {
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
+    });
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    const user =
+    this.state.demoUsers[Math.floor(Math.random() * this.state.demoUsers.length)];
+    this.props.login(user).then(() => {
+      if (this.props.errors.length === 0) {
+      this.closeModal();
+    }
     });
   }
 
@@ -121,6 +141,9 @@ class LoginForm extends React.Component {
                 />
               <br />
               <input className="session-submit-button" type="submit" value="Login" />
+              <button className="session-submit-button"
+                onClick={this.handleClick}
+                 >Demo Login</button>
             </div>
           </form>
         </Modal>
