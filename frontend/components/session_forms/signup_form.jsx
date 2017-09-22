@@ -54,6 +54,7 @@ class SignupForm extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -62,23 +63,31 @@ class SignupForm extends React.Component {
     if (user.img_url === '') {
       delete user.img_url;
     }
-    this.props.signup(user);
-    this.closeModal();
+    this.props.signup(user).then(() => {
+      if (this.props.errors.length !== 0) {
+        this.closeModal();
+      }
+    });
   }
 
-  // navLink() {
-  //     return (
-  //       <div>
-  //         <h5>Already have an account?</h5>
-  //         <Link to="/login">Login</Link>
-  //       </div>
-  //     );
-  // }
+
 
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
     });
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -93,6 +102,8 @@ class SignupForm extends React.Component {
           contentLabel="Signup Modal"
         >
           <form className="session-form" onSubmit={this.handleSubmit} id="session-form">
+            <span className="session-errors">{this.renderErrors()}</span>
+            <h1 className="session-title">Welcome to Barebnb!</h1>
             <br/>
             <div className="session-div">
                 <input className="input-field" type="text" placeholder="Username" value={this.state.username}
@@ -106,7 +117,7 @@ class SignupForm extends React.Component {
                   onChange={this.update('password')}
                 />
               <br/>
-              <input className="input-field" placeholder="Link to Profile Image" type="text" value={this.state.img_url}
+              <input className="input-field" placeholder="Link to Profile Image (optional)" type="text" value={this.state.img_url}
                   onChange={this.update('img_url')}/>
               <br />
               <input className="session-submit-button" type="submit" value="Sign Up" />

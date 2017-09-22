@@ -11,15 +11,14 @@ import {
 } from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
 import Header from './header/header';
+import Main from './main/main';
 
 
 
 const App = () => (
   <div>
     <Header />
-    <div className="main">
-
-    </div>
+    <Main />
     <div className="footer">
 
     </div>

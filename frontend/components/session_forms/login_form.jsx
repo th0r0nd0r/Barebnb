@@ -58,29 +58,41 @@ class LoginForm extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
+    this.props.clearErrors();
   }
+
+  // componentWillUnmount() {
+  //
+  // }
 
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user);
-    this.closeModal();
+    this.props.login(user).then(() => {
+      if (this.props.errors.length === 0) {
+      this.closeModal();
+    }
+    });
   }
 
-  // navLink() {
-  //     return (
-  //       <div>
-  //         <h5>Don't have an account?</h5>
-  //         <Link to="/signup">Sign Up</Link>
-  //       </div>
-  //     );
-  // }
 
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
     });
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -96,6 +108,8 @@ class LoginForm extends React.Component {
         >
 
           <form className="session-form" onSubmit={this.handleSubmit} id="session-form">
+            <span className="session-errors">{this.renderErrors()}</span>
+            <h1 className="session-title">Login</h1>
             <br/>
             <div className="session-div">
                 <input className="input-field" type='text' placeholder='Email'
