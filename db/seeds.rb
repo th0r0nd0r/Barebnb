@@ -18,5 +18,65 @@ demo_users = User.create([
     email: 'captain@hotmail.com',
     password: 'whynorum',
     img_url: 'https://lumiere-a.akamaihd.net/v1/images/bluesteel_d0f846ee.jpeg?region=0%2C0%2C1580%2C880'
+  },
+  {
+    username: 'John Madden',
+    email: 'mamamia@spcglobal.net',
+    password: 'football',
+    img_url: 'https://cbssanfran.files.wordpress.com/2010/09/johnmadden01-250.jpg?w=318&h=318&crop=1'
+  },
+  {
+    username: 'Whoopee Goldberg',
+    email: 'ihateborg@enterprise.org',
+    password: 'crazydrinks',
+    img_url: 'http://www.treknews.net/wp-content/uploads/2016/08/whoopi-goldberg-guinan-star-trek-tng.jpg'
+  },
+  {
+    username: 'Hans Florine',
+    email: 'boltbanger@gmail.com',
+    password: 'gottagofast',
+    img_url: 'https://www.outdoorresearch.com/blog/images/athletes/Hans_Florine.jpg'
+  },
+  {
+    username: 'Dan Osmond',
+    email: 'speeddemon@aol.com',
+    password: 'bearsreach',
+    img_url: 'http://www.supertopo.com/photos/10/49/226421_14531_L.jpg'
+  },
+  {
+    username: 'Chris Sharma',
+    email: 'oliana@sharma.net',
+    password: 'jumbolove',
+    img_url: 'http://www.rockandice.com/Article-Images/News-Photos/sharma-1-profile-cropped.jpg'
+  },
+  {
+    username: 'Warren Harding',
+    email: 'boltladder@bigwall.net',
+    password: 'partyhard',
+    img_url: 'http://www.supertopo.com/photos/1/32/134730_11981_L.jpg'
+  },
+  {
+    username: 'Lynn Hill',
+    email: 'itgoesboys@elcap.com',
+    password: 'freeascent',
+    img_url: 'https://cdn.ukc2.com/i/289172.jpg'
+  },
+  {
+    username: 'Royal Robbins',
+    email: 'hardman@netscape.com',
+    password: 'whysoserious',
+    img_url: 'https://sierraclub.org/sites/www.sierraclub.org/files/blog/_planet/Royal%20Robbins%20%28photo%20by%20Tom%20Frost.jpg'
+  },
+  {
+    username: 'Layton Kor',
+    email: 'castleton@ogcrusher.org',
+    password: 'squeezechimney',
+    img_url: 'http://www.elevationoutdoors.com/top-climbers/wp-content/uploads/2015/08/202046_27996_XL.jpg'
+  },
+  {
+    username: 'Yvon Chouinard',
+    email: 'patagonia@bd.com',
+    password: 'theenvironment',
+    img_url: 'https://i.pinimg.com/originals/75/27/e2/7527e207f80f5bd9a7679c0702792600.jpg'
   }
   ])
