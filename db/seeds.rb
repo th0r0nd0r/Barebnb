@@ -90,7 +90,7 @@ demo_users = User.create([
       lat: 37.785983,
       lng: -122.462808,
       host_id: 3,
-      img_url: 'https://www.myhammock.com/prodimages/sschs1.jpg'
+      img_url: 'https://cdn.shopify.com/s/files/1/0167/0460/products/Pastel_4ae3b5cd-6295-4a66-b1d1-e2b31566f5dc.jpg?v=1496943355'
     },
     {
       title: "Double-Decker Van Home",
@@ -99,5 +99,29 @@ demo_users = User.create([
       lng: -122.456902,
       host_id: 0,
       img_url: 'https://i.pinimg.com/736x/7a/25/37/7a2537b3372a5f0ebd5122cd6f398ae6--vw-camper-vans-vw-vans.jpg'
+    },
+    {
+      title: "Modern Yurt-Style Tent",
+      description: "Fully furnished with table and memory-foam mattress.",
+      lat: 37.890241,
+      lng:  -122.255026,
+      host_id: 5,
+      img_url: 'https://sogblog-cdn.r.worldssl.net/wp-content/uploads/2014/07/Tent3.jpg'
+    },
+    {
+      title: "Hanging Tent in Wine Country",
+      description: "Come hang out for a night, suspended over the world-famous rolling hills of Sonoma County",
+      lat: 38.328803,
+      lng: -122.809945,
+      host_id: 2,
+      img_url: 'http://www.homecrux.com/wp-content/uploads/2014/08/Roomoon-by-The-Hanging-Tent-Company_1.jpg'
+    },
+    {
+      title: "Big wall bivouac in Yosemite",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 37.730820,
+      lng: -119.574197,
+      host_id: 0,
+      img_url: 'http://i.dailymail.co.uk/i/pix/2014/01/16/article-0-1AB3929700000578-919_964x518.jpg'
     }
     ])

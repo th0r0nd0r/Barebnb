@@ -9,11 +9,9 @@ class SpotIndexItem extends React.Component {
   render() {
     const spot = this.props.spot;
     return (
-      <div>
-        <img src={spot.img_url}/>
-        <div>
-          {spot.title}
-        </div>
+      <div className="spot-index-item">
+        <img className="spot-image" src={spot.img_url}/>
+        <h3 className="spot-title">{spot.title}</h3>
       </div>
     );
   }
