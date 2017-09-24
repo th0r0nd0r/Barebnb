@@ -21,7 +21,9 @@ import Main from './main/main';
 const App = () => (
   <div>
     <Header />
-    <Main />
+    <Switch>
+      <Route path="/" component={Main} />
+    </Switch>
     <div className="footer">
 
     </div>
