@@ -17,7 +17,6 @@ class SpotIndex extends React.Component {
     // console.log('spots', spots);
     return (
       <div className="below-background">
-        <h1 className="spot-index-title">Featured Spots </h1>
         <div className="spot-index">
           {spots.map((spot, idx) => (
             <SpotIndexItem class-name="spot-index-item"

@@ -7,6 +7,8 @@
       :lat,
       :lng,
       :host_id,
+      :price,
+      :beds,
       :img_url
   end
 end

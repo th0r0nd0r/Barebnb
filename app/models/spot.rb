@@ -4,6 +4,8 @@ class Spot < ApplicationRecord
             :lat,
             :lng,
             :host_id,
+            :price,
+            :bed,
             :img_url,
             presence: true
 end

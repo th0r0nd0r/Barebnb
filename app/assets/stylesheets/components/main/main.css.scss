@@ -21,13 +21,17 @@
 }
 
 .spot-index-title {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   font-size: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
   color: #97b3c7;
+
+  display: block;
+  padding-bottom: 20px;
+  padding-top: 5px;
 }
 
 .spot-index {
@@ -45,12 +49,7 @@
   // width: 33.33333333333%;
   vertical-align: top;
   margin: 20px;
-}
-
-.spot-index-title {
-    display: inline-block;
-    padding-bottom: 20px;
-    padding-top: 5px;
+  padding-bottom: 30px;
 }
 
 .spot-image {
@@ -59,14 +58,35 @@
   object-fit: cover;
 }
 
-.spot-title {
-  font-family: 'Circular', sans-serif;
+.title-price {
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #424344;
+  display: inline-block;
+}
+
+.spot-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 .below-background {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+}
+
+.spots {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  flex-flow: row wrap;
+}
+
+.beds {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #768296;
+  display: block;
 }
