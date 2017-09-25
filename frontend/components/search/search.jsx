@@ -10,7 +10,7 @@ const Search = ({ spots }) => (
     </div>
     <div className="map-stuff">
       <h3>There is a map here</h3>
-      <SpotMap />
+      <SpotMap spots={ spots }/>
     </div>
   </div>
 );
