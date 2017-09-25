@@ -13,10 +13,15 @@ export const receiveSpot = (spot) => ({
   spot
 });
 
+
 export const getSpots = () => dispatch => (
   APIUtil.fetchSpots().then(spots => dispatch(receiveSpots(spots)))
 );
 
 export const getSpot = (id) => dispatch => (
   APIUtil.fetchSpot(id).then(spot => dispatch(receiveSpot(spot)))
+);
+
+export const createSpot = spot => dispatch => (
+  APIUtil.createSpot(spot).then(newSpot => dispatch(receiveSpot(newSpot)))
 );

@@ -5,7 +5,7 @@ class Spot < ApplicationRecord
             :lng,
             :host_id,
             :price,
-            :bed,
+            :beds,
             :img_url,
             presence: true
 

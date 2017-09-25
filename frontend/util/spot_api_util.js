@@ -13,3 +13,11 @@ export const fetchSpot = (id) => (
     err: () => console.log('Error fetching spot')
   })
 );
+
+export const createSpot = (spot) => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/spots',
+    data: spot
+  })
+);

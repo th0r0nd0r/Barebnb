@@ -21,7 +21,8 @@ class Api::SpotsController < ApplicationController
       :lng,
       :host_id,
       :img_url,
-      :price
+      :price,
+      :beds
       )
   end
 end
