@@ -37,7 +37,7 @@ class SpotForm extends React.Component {
       <div className="spot-form-container">
         <h1 className="spot-form-title">Create a Spot</h1>
         <br/>
-        <form className="spot-form" onSubmit={this.handleSubmit()}>
+        <form className="spot-form" onSubmit={this.handleSubmit}>
           <div className="spot-form-inputs">
             <input
               className="input-field"
