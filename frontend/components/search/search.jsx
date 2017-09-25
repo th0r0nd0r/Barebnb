@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SpotIndex from '../spots_index/spot_index';
+import SpotIndexContainer from '../spots_index/spot_index_container';
 import SpotMap from '../spot_map/spot_map';
 
 const Search = ({ spots }) => (
