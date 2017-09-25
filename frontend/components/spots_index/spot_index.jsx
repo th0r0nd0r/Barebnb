@@ -11,9 +11,18 @@ class SpotIndex extends React.Component {
     this.props.getSpots();
   }
 
+  whichSpots() {
+    if (this.props.searchSpots) {
+      return this.props.searchSpots;
+    } else {
+      return this.props.spots;
+    }
+  }
+
   render () {
-    console.log('props:', this.props.spots);
-    const spots = this.props.spots;
+    console.log('spots:', this.props.spots);
+    console.log('search spots:', this.props.searchSpots);
+    const spots = this.whichSpots();
     // console.log('spots', spots);
     return (
       <div className="below-background">
