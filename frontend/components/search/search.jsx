@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SpotIndex from '../spot_index/spot_index';
+import SpotIndex from '../spots_index/spot_index';
 import SpotMap from '../spot_map/spot_map';
 
 const Search = ({ spots }) => (
@@ -14,3 +14,5 @@ const Search = ({ spots }) => (
     </div>
   </div>
 );
+
+export default Search;
