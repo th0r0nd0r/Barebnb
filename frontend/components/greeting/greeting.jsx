@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginFormContainer from '../session_forms/login_form_container';
 import SignupFormContainer from '../session_forms/signup_form_container';
+import { Link } from 'react-router-dom';
 
 const buttons = () => (
   <nav className="session-buttons" >
@@ -19,7 +20,14 @@ const welcomeMessage = (currentUser, logout) => (
 
 
 const Greeting = ({currentUser, logout}) => (
-  currentUser ? welcomeMessage(currentUser, logout) : buttons()
+  <div className="nav-buttons">
+    {currentUser ? welcomeMessage(currentUser, logout) : buttons()}
+    <Link to="/spots">
+      <button className="session-button">
+        Find a Spot
+      </button>
+    </Link>
+  </div>
 );
 
 export default Greeting;
