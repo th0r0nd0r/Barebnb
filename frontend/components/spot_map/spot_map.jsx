@@ -8,7 +8,7 @@ const getCoordsObj = LatLng => ({
   lng: LatLng.lng()
 });
 
-let mapOptions = {
+const mapOptions = {
   center: { lat: 37.989560, lng: -122.519999 },
   zoom: 9
 };
@@ -23,6 +23,7 @@ class SpotMap extends React.Component {
 
   componentDidMount() {
     console.log("props:", this.props);
+    const map = this.refs.map;
     if (this.props.singleSpot) {
       this.props.getSpot(this.props.spotId);
     } else {
@@ -34,13 +35,14 @@ class SpotMap extends React.Component {
 
   componentDidUpdate() {
     if (this.props.singleSpot) {
-      // const map = this.refs.map;
       console.log("propspots:", this.props.spots);
       const targetSpotKey = Object.keys(this.props.spots)[0];
       const targetSpot = this.props.spots[targetSpotKey];
 
-      mapOptions.center = {lat: targetSpot.lat, lng: targetSpot.lng};
-      mapOptions.zoom = 12;
+      const singleSpotOptions = {
+        center: {lat: targetSpot.lat, lng: targetSpot.lng},
+        zoom: 12
+      };
       // console.log("spotfromstate:", this.state.spot);
       // console.log("spot:", this.props.getSpot(this.props.spotId));
       // console.log("targetSpotKey:", targetSpotKey);
@@ -49,7 +51,7 @@ class SpotMap extends React.Component {
       // console.log("lat:", targetSpot.lat);
       // console.log("lng:", targetSpot.lng);
       console.log(mapOptions);
-      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      this.map = new google.maps.Map(this.mapNode, singleSpotOptions);
       console.log(this.map);
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers([targetSpot]);
