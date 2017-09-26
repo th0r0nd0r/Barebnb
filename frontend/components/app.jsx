@@ -25,7 +25,7 @@ const App = () => (
     <Header />
     <Switch>
       <Route exact path="/spots" component={SearchContainer} />
-      <Route exact path="/spots/new" component={SearchContainer} />
+      <Route exact path="/spots/new" component={SpotFormContainer} />
       <Route path="/" component={Main} />
     </Switch>
     <div className="footer">

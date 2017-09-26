@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import SpotMap from '../spot_map/spot_map';
 
 class SpotForm extends React.Component {
   constructor(props) {
@@ -34,67 +35,72 @@ class SpotForm extends React.Component {
     const { lat, lng } = this.coords;
 
     return (
-      <div className="spot-form-container-squared">
-        <div className="spot-form-container">
-          <h1 className="spot-form-title">Create a Spot</h1>
-          <form className="spot-form" onSubmit={this.handleSubmit}>
-            <div className="spot-form-inputs">
-              <input
-                className="input-field"
-                type="text"
-                placeholder="Spot name"
-                value={title}
-                onChange={this.update('title')}
-                />
-              <br/>
-              <input
-                className="input-field"
-                type="text"
-                placeholder="Description"
-                value={description}
-                onChange={this.update('description')}
-                />
-              <br/>
-              <input
-                className="input-field"
-                type="text"
-                placeholder="Number of beds (includes hammocks, cots, etc.)"
-                onChange={this.update('beds')}
-                />
-              <br/>
-              <input
-                className="input-field"
-                type="text"
-                placeholder="Price per night"
-                onChange={this.update('price')}
-                />
-              <br/>
-              <input
-                className="input-field"
-                type="text"
-                placeholder="Link to an image of your spot!"
-                value={img_url}
-                onChange={this.update('img_url')}
-                />
-              <br/>
-              <div className="lat-lng-input-container">
+      <div className="form-and-map">
+        <div className="spot-form-container-squared">
+          <div className="spot-form-container">
+            <h1 className="spot-form-title">Create a Spot</h1>
+            <form className="spot-form" onSubmit={this.handleSubmit}>
+              <div className="spot-form-inputs">
                 <input
-                  className="lat-lng-input"
+                  className="input-field"
                   type="text"
-                  placeholder="Latitude"
-                  value={lat}
+                  placeholder="Spot name"
+                  value={title}
+                  onChange={this.update('title')}
                   />
+                <br/>
                 <input
-                  className="lat-lng-input"
+                  className="input-field"
                   type="text"
-                  placeholder="Longitude"
-                  value={lng}
+                  placeholder="Description"
+                  value={description}
+                  onChange={this.update('description')}
                   />
+                <br/>
+                <input
+                  className="input-field"
+                  type="text"
+                  placeholder="Number of beds (includes hammocks, cots, etc.)"
+                  onChange={this.update('beds')}
+                  />
+                <br/>
+                <input
+                  className="input-field"
+                  type="text"
+                  placeholder="Price per night"
+                  onChange={this.update('price')}
+                  />
+                <br/>
+                <input
+                  className="input-field"
+                  type="text"
+                  placeholder="Link to an image of your spot!"
+                  value={img_url}
+                  onChange={this.update('img_url')}
+                  />
+                <br/>
+                <div className="lat-lng-input-container">
+                  <input
+                    className="lat-lng-input"
+                    type="text"
+                    placeholder="Latitude"
+                    value={lat}
+                    />
+                  <input
+                    className="lat-lng-input"
+                    type="text"
+                    placeholder="Longitude"
+                    value={lng}
+                    />
+                </div>
+                <br/>
+                <input className="session-submit-button" type="submit" value="Create Spot" />
               </div>
-              <br/>
-              <input className="session-submit-button" type="submit" value="Create Spot" />
-            </div>
-          </form>
+            </form>
+          </div>
+        </div>
+        <div className="map-stuff">
+          <SpotMap spots={ this.props.spots } />
         </div>
       </div>
     );

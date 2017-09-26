@@ -5,7 +5,8 @@ import SpotForm from './spot_form';
 
 const mapStateToProps = (state, { location }) => ({
   lat: new URLSearchParams(location.search).get("lat"),
-  lng: new URLSearchParams(location.search).get("lng")
+  lng: new URLSearchParams(location.search).get("lng"),
+  spots: Object.values(state.entities.spots)
 });
 
 const mapDispatchToProps = dispatch => ({
