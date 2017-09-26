@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Route, Redirect } from 'react-router-dom';
 import SpotMap from '../spot_map/spot_map';
 
 
@@ -40,12 +40,15 @@ class SpotForm extends React.Component {
     window.removeEventListener("hashchange", this.updateCoords);
   }
 
+  navigateToSearch() {
+    this.props.history.push(`/spots`);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    const spot = Object.assign({}, this.state, this.coords);
-    this.props.createSpot({spot});
-    this.navigateToSearch();
+    const spot = Object.assign({}, this.state, this.coords, {host_id: this.props.currentUser.id});
+    const newSpot = this.props.createSpot({spot});
+    this.navigateToShow(newSpot);
   }
 
   render() {
