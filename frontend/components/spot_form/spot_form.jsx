@@ -40,14 +40,15 @@ class SpotForm extends React.Component {
     window.removeEventListener("hashchange", this.updateCoords);
   }
 
-  navigateToSearch() {
-    this.props.history.push(`/spots`);
+  navigateToShow(newSpot) {
+    this.props.history.push(`/spots/${newSpot.id}`);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const spot = Object.assign({}, this.state, this.coords, {host_id: this.props.currentUser.id});
     const newSpot = this.props.createSpot({spot});
+    console.log(newSpot);
     this.navigateToShow(newSpot);
   }
 
@@ -114,6 +115,7 @@ class SpotForm extends React.Component {
                     value={lng}
                     />
                 </div>
+                <div className="lat-lng-message">Click anywhere on the map to set your spot's Location</div>
                 <br/>
                 <input className="session-submit-button" type="submit" value="Create Spot" />
               </div>

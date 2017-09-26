@@ -27,6 +27,11 @@ const Greeting = ({currentUser, logout}) => (
         Find a Spot
       </button>
     </Link>
+    <Link to="/spots/new">
+      <button className="session-button">
+        Create a Spot
+      </button>
+    </Link>
   </div>
 );
 
