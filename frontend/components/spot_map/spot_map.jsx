@@ -14,13 +14,15 @@ const mapOptions = {
 };
 
 class SpotMap extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
-
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-
     this.MarkerManager.updateMarkers(this.props.spots);
+    this.registerListeners();
   }
 
   componentDidUpdate() {
@@ -28,16 +30,16 @@ class SpotMap extends React.Component {
   }
 
   registerListeners() {
-    google.maps.event.addListener(this.map, 'idle', () => {
+    this.map.addListener( 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-      this.props.updateFilter('bounds', bounds);
+      // this.props.updateFilter('bounds', bounds);
     });
-    google.maps.event.addListener(this.map, 'click', (event) => {
+    this.map.addListener( 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
-      this._handleClick(coords);
+      this.handleClick(coords);
     });
   }
 
@@ -45,7 +47,7 @@ class SpotMap extends React.Component {
     this.props.history.push(`spots/${spot.id}`);
   }
 
-  _handleClick(coords){
+  handleClick(coords){
     this.props.history.push({
       search: `lat=${coords.lat}&lng=${coords.lng}`
     });
@@ -54,7 +56,6 @@ class SpotMap extends React.Component {
   render() {
     return (
       <div className="map" ref={ map => this.mapNode = map }>
-        something
       </div>
     );
   }

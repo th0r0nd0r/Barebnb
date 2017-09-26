@@ -81,14 +81,12 @@ class SpotForm extends React.Component {
                 <input
                   className="lat-lng-input"
                   type="text"
-                  disabled
                   placeholder="Latitude"
                   value={lat}
                   />
                 <input
                   className="lat-lng-input"
                   type="text"
-                  disabled
                   placeholder="Longitude"
                   value={lng}
                   />
