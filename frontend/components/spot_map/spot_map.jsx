@@ -16,9 +16,6 @@ const mapOptions = {
 class SpotMap extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      spot: {}
-    };
   }
 
   componentDidMount() {
@@ -64,7 +61,7 @@ class SpotMap extends React.Component {
     this.map.addListener( 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
-        northEast: { lat:north, lng: east },
+        northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } };
       // this.props.updateFilter('bounds', bounds);
     });

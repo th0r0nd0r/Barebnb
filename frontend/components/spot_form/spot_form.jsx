@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import SpotMap from '../spot_map/spot_map';
 
+
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +16,7 @@ class SpotForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateCoords = this.updateCoords.bind(this);
   }
 
   update(property) {
@@ -22,6 +24,22 @@ class SpotForm extends React.Component {
       [property]: e.target.value
     });
   }
+
+  updateCoords() {
+    console.log("form history:", this.props.history);
+    console.log("new coords:", this.coords);
+    this.coords = {lat: new URLSearchParams(this.props.history.location.search).get("lat"),
+    lng: new URLSearchParams(this.props.history.location.search).get("lng")};
+  }
+
+  componentDidMount() {
+    window.addEventListener("hashchange", this.updateCoords);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("hashchange", this.updateCoords);
+  }
+
 
   handleSubmit(e) {
     e.preventDefault();

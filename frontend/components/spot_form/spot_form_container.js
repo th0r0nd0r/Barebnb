@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { createSpot } from '../../actions/spot_actions';
 import SpotForm from './spot_form';
@@ -13,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   createSpot: spot => dispatch(createSpot(spot))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SpotForm);
+)(SpotForm));
