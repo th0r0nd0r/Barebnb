@@ -118,7 +118,7 @@ class SpotForm extends React.Component {
           </div>
         </div>
         <div className="map-stuff">
-          <SpotMap spots={ this.props.spots } />
+          <SpotMap spots={ this.props.spots } formMounted={true} />
         </div>
       </div>
     );

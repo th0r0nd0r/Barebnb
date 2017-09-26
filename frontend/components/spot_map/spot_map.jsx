@@ -19,7 +19,7 @@ class SpotMap extends React.Component {
   }
 
   componentDidMount() {
-    console.log("props:", this.props);
+    // console.log("props:", this.props);
     const map = this.refs.map;
     if (this.props.singleSpot) {
       this.props.getSpot(this.props.spotId);
@@ -32,7 +32,7 @@ class SpotMap extends React.Component {
 
   componentDidUpdate() {
     if (this.props.singleSpot) {
-      console.log("propspots:", this.props.spots);
+      // console.log("propspots:", this.props.spots);
       const targetSpotKey = Object.keys(this.props.spots)[0];
       const targetSpot = this.props.spots[targetSpotKey];
 
@@ -43,7 +43,7 @@ class SpotMap extends React.Component {
       // console.log("spotfromstate:", this.state.spot);
       // console.log("spot:", this.props.getSpot(this.props.spotId));
       // console.log("targetSpotKey:", targetSpotKey);
-      console.log("targetSpot:", targetSpot);
+      // console.log("targetSpot:", targetSpot);
       // console.log(targetSpot);
       // console.log("lat:", targetSpot.lat);
       // console.log("lng:", targetSpot.lng);
@@ -76,9 +76,11 @@ class SpotMap extends React.Component {
   }
 
   handleClick(coords){
-    this.props.history.push({
-      search: `lat=${coords.lat}&lng=${coords.lng}`
-    });
+    if (this.props.formMounted) {
+      this.props.history.push({
+        search: `lat=${coords.lat}&lng=${coords.lng}`
+      });
+    }
   }
 
   render() {
