@@ -1,0 +1,29 @@
+.spot-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spot-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.single-spot-map {
+  width: 50vw;
+  height: 60vh;
+  margin-bottom: 50px;
+}
+
+.spot-show-image {
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+  order: -1;
+}
+
+.spot-details {
+  order: -1;
+}

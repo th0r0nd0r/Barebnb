@@ -125,6 +125,7 @@ class LoginForm extends React.Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
+    this.props.history.push("/login");
   }
 
   // afterOpenModal() {
