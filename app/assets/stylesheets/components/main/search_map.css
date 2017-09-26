@@ -16,9 +16,9 @@
 
 .map-stuff {
   height: 100vh;
-  /*position: fixed;*/
+  position: fixed;
   /*display: inline-block;*/
   width: 45vw;
-  /*padding-left: 55vw;*/
+  margin-left: 55vw;
   order: 1;
 }

@@ -9,24 +9,53 @@ const getCoordsObj = LatLng => ({
 });
 
 const mapOptions = {
-  center: { lat: 37.989560, lng: -122.519999 }, // this is SF
+  center: { lat: 37.989560, lng: -122.519999 },
   zoom: 9
 };
 
 class SpotMap extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      spot: {}
+    };
   }
 
   componentDidMount() {
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-    this.MarkerManager.updateMarkers(this.props.spots);
-    this.registerListeners();
+    console.log("props:", this.props);
+    if (this.props.singleSpot) {
+      this.props.getSpot(this.props.spotId)
+      .then(spot => this.state.spot = spot);
+
+      const targetSpotKey = Object.keys(this.props.spots)[0];
+      const targetSpot = this.props.spots[targetSpotKey];
+
+      mapOptions.center = {lat: targetSpot.lat, lng: targetSpot.lng};
+      mapOptions.zoom = 12;
+      console.log("spotfromstate:", this.state.spot);
+      console.log("spot:", this.props.getSpot(this.props.spotId));
+      console.log("targetSpotKey:", targetSpotKey);
+      console.log("targetSpot:", targetSpot);
+      console.log(targetSpot);
+      console.log("lat:", targetSpot.lat);
+      console.log("lng:", targetSpot.lng);
+
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager.updateMarkers([targetSpot]);
+    } else {
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      this.registerListeners();
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager.updateMarkers(this.props.spots);
+    }
+
   }
 
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.spots);
+    if (!this.props.singleSpot) {
+      this.MarkerManager.updateMarkers(this.props.spots);
+    }
   }
 
   registerListeners() {

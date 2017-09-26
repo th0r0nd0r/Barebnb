@@ -13,6 +13,7 @@ import SignupFormContainer from './session_forms/signup_form_container';
 import SpotIndexContainer from './spots_index/spot_index_container';
 import SearchContainer from './search/search_container';
 import SpotFormContainer from './spot_form/spot_form_container';
+import SpotShowContainer from './spot_show/spot_show_container';
 
 import {AuthRoute} from '../util/route_util';
 import Header from './header/header';
@@ -26,6 +27,7 @@ const App = () => (
     <Switch>
       <Route exact path="/spots" component={SearchContainer} />
       <Route exact path="/spots/new" component={SpotFormContainer} />
+      <Route path="/spots/:spotId" component={SpotShowContainer} />
       <Route path="/" component={Main} />
     </Switch>
     <div className="footer">
