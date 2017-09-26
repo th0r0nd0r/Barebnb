@@ -9,7 +9,7 @@ const Search = ({ spots }) => (
       <SpotIndexContainer searchSpots={ spots } />
     </div>
     <div className="map-stuff">
-      <SpotMap spots={ spots }/>
+      <SpotMap spots={ spots } singleSpot={false} />
     </div>
   </div>
 );

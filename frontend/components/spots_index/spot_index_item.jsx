@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SpotIndexItem extends React.Component {
   constructor(props) {
@@ -17,15 +18,17 @@ class SpotIndexItem extends React.Component {
   render() {
     const spot = this.props.spot;
     return (
-      <div className="spot-index-item">
-        <img className="spot-image" src={spot.img_url}/>
-        <br />
-        <div className="spot-info">
-          <h3 className="title-price">{spot.title}</h3>
-          <h3 className="title-price">${spot.price}</h3>
+      <Link to={`/spots/${spot.id}`}>
+        <div className="spot-index-item">
+          <img className="spot-image" src={spot.img_url}/>
+          <br />
+          <div className="spot-info">
+            <h3 className="title-price">{spot.title}</h3>
+            <h3 className="title-price">${spot.price}</h3>
+          </div>
+          <h3 className="beds">{spot.beds} {this.beds()}</h3>
         </div>
-        <h3 className="beds">{spot.beds} {this.beds()}</h3>
-      </div>
+      </Link>
     );
   }
 }

@@ -8,7 +8,7 @@ const getCoordsObj = LatLng => ({
   lng: LatLng.lng()
 });
 
-const mapOptions = {
+let mapOptions = {
   center: { lat: 37.989560, lng: -122.519999 },
   zoom: 9
 };
@@ -24,36 +24,36 @@ class SpotMap extends React.Component {
   componentDidMount() {
     console.log("props:", this.props);
     if (this.props.singleSpot) {
-      this.props.getSpot(this.props.spotId)
-      .then(spot => this.state.spot = spot);
+      this.props.getSpot(this.props.spotId);
+    } else {
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      this.registerListeners();
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    }
+  }
 
+  componentDidUpdate() {
+    if (this.props.singleSpot) {
+      // const map = this.refs.map;
+      console.log("propspots:", this.props.spots);
       const targetSpotKey = Object.keys(this.props.spots)[0];
       const targetSpot = this.props.spots[targetSpotKey];
 
       mapOptions.center = {lat: targetSpot.lat, lng: targetSpot.lng};
       mapOptions.zoom = 12;
-      console.log("spotfromstate:", this.state.spot);
-      console.log("spot:", this.props.getSpot(this.props.spotId));
-      console.log("targetSpotKey:", targetSpotKey);
+      // console.log("spotfromstate:", this.state.spot);
+      // console.log("spot:", this.props.getSpot(this.props.spotId));
+      // console.log("targetSpotKey:", targetSpotKey);
       console.log("targetSpot:", targetSpot);
-      console.log(targetSpot);
-      console.log("lat:", targetSpot.lat);
-      console.log("lng:", targetSpot.lng);
-
+      // console.log(targetSpot);
+      // console.log("lat:", targetSpot.lat);
+      // console.log("lng:", targetSpot.lng);
+      console.log(mapOptions);
       this.map = new google.maps.Map(this.mapNode, mapOptions);
+      console.log(this.map);
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers([targetSpot]);
     } else {
-      this.map = new google.maps.Map(this.mapNode, mapOptions);
-      this.registerListeners();
-      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-      this.MarkerManager.updateMarkers(this.props.spots);
-    }
-
-  }
-
-  componentDidUpdate() {
-    if (!this.props.singleSpot) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
   }

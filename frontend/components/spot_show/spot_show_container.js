@@ -6,7 +6,8 @@ import SpotShow from './spot_show';
 
 const mapStateToProps = (state, { match }) => {
   const spotId = parseInt(match.params.spotId);
-  const spot = selectSpot(state.entities, ("3"));
+  const spot = selectSpot(state.entities, (match.params.spotId));
+  console.log("spot from container:", spot);
   return {
     spotId,
     spot
