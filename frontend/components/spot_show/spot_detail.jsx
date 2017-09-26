@@ -33,6 +33,7 @@ class SpotDetail extends React.Component {
   // }
 
   render() {
+    console.log("host:", this.props.host);
     const spot = this.props.spot;
     return(
       <div className="spot-detail">

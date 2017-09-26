@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.spot-details {
+  order: -1;
+}
+
 .spot-detail {
   display: flex;
   flex-direction: column;
@@ -24,6 +28,6 @@
   order: -1;
 }
 
-.spot-details {
-  order: -1;
+.spot-show-title {
+  font-family: 'Open Sans', sans-serif;
 }

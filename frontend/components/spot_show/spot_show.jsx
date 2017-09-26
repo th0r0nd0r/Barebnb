@@ -6,27 +6,43 @@ import SpotMap from '../spot_map/spot_map';
 
 import { ProtectedRoute } from '../../util/route_util';
 
-const SpotShow = ({ spot, spotId, getSpot }) => {
-  const spots = {
-    [spotId]: spot
-  };
+class SpotShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      host: {}
+    };
+  }
 
-  return(
-    <div className="spot-show">
-      <div className="single-spot-map">
-        <SpotMap
-          spots={spots}
-          spotId={spotId}
-          singleSpot={true}
-          getSpot={getSpot}
-        />
-      </div>
+  componentDidMount() {
+    console.log("pprops:", this.props);
+    console.log("sspot:", this.props.spot);
+    this.props.getSpot().then((spot) => this.state.host = this.props.getUser(spot.host_id))
+      .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
+  }
 
-      <div className="spot-details">
-        <SpotDetail spot={spot} />
+  render() {
+    const { spotId, spot, getSpot, getUser } = this.props;
+    const spots = {
+      [spotId]: spot
+    };
+    return(
+      <div className="spot-show">
+        <div className="single-spot-map">
+          <SpotMap
+            spots={spots}
+            spotId={spotId}
+            singleSpot={true}
+            getSpot={getSpot}
+          />
+        </div>
+
+        <div className="spot-details">
+          <SpotDetail spot={spot} host={this.state.host}/>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SpotShow;
