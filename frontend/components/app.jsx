@@ -15,7 +15,7 @@ import SearchContainer from './search/search_container';
 import SpotFormContainer from './spot_form/spot_form_container';
 import SpotShowContainer from './spot_show/spot_show_container';
 
-import {AuthRoute} from '../util/route_util';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Header from './header/header';
 import Main from './main/main';
 
@@ -26,7 +26,7 @@ const App = () => (
     <Header />
     <Switch>
       <Route exact path="/spots" component={SearchContainer} />
-      <Route exact path="/spots/new" component={SpotFormContainer} />
+      <ProtectedRoute exact path="/spots/new" component={SpotFormContainer} />
       <Route path="/spots/:spotId" component={SpotShowContainer} />
       <Route path="/" component={Main} />
     </Switch>

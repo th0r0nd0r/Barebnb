@@ -47,9 +47,7 @@ class SpotForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const spot = Object.assign({}, this.state, this.coords, {host_id: this.props.currentUser.id});
-    const newSpot = this.props.createSpot({spot});
-    console.log(newSpot);
-    this.navigateToShow(newSpot);
+    this.props.createSpot({spot}).then((newSpot) => (this.navigateToShow(newSpot)));
   }
 
   render() {

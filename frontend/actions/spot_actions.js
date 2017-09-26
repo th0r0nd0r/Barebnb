@@ -23,5 +23,8 @@ export const getSpot = (id) => dispatch => (
 );
 
 export const createSpot = spot => dispatch => (
-  APIUtil.createSpot(spot).then(newSpot => dispatch(receiveSpot(newSpot)))
+ APIUtil.createSpot(spot).then(newSpot => {
+ 	dispatch(receiveSpot(newSpot));
+	 return newSpot;
+ })
 );
