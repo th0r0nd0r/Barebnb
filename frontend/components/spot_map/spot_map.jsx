@@ -47,9 +47,9 @@ class SpotMap extends React.Component {
       // console.log(targetSpot);
       // console.log("lat:", targetSpot.lat);
       // console.log("lng:", targetSpot.lng);
-      console.log(mapOptions);
+      // console.log(mapOptions);
       this.map = new google.maps.Map(this.mapNode, singleSpotOptions);
-      console.log(this.map);
+      // console.log(this.map);
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers([targetSpot]);
     } else {
