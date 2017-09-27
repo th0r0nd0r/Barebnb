@@ -9,6 +9,9 @@ class Spot < ApplicationRecord
             :img_url,
             presence: true
 
+  has_many :reviews
+  belongs_to :host, foreign_key: "host_id", class_name: "User"
+
   def self.in_bounds(bounds)
   # google map bounds will be in the following format:
   # {

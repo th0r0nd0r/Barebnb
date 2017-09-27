@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
  attr_reader :password
 
+ has_many :spots
+ has_many :reviews
+
  def reset_session_token!
    self.session_token = SecureRandom.urlsafe_base64(16)
    self.save!

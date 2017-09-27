@@ -8,7 +8,8 @@ const mapStateToProps = (state, { location }) => ({
   lat: new URLSearchParams(location.search).get("lat"),
   lng: new URLSearchParams(location.search).get("lng"),
   spots: Object.values(state.entities.spots),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.errors.spot
 });
 
 const mapDispatchToProps = dispatch => ({

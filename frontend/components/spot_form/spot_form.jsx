@@ -50,6 +50,18 @@ class SpotForm extends React.Component {
     this.props.createSpot({spot}).then((newSpot) => (this.navigateToShow(newSpot)));
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     const { title, description, price, beds, img_url } = this.state;
     const { lat, lng } = this.coords;
@@ -58,6 +70,7 @@ class SpotForm extends React.Component {
       <div className="form-and-map">
         <div className="spot-form-container-squared">
           <div className="spot-form-container">
+            <span className="session-errors">{this.renderErrors()}</span>
             <h1 className="spot-form-title">Create a Spot</h1>
             <form className="spot-form" onSubmit={this.handleSubmit}>
               <div className="spot-form-inputs">

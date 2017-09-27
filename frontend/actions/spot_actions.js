@@ -2,6 +2,7 @@ import * as APIUtil from '../util/spot_api_util';
 
 export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SPOT = 'RECEIVE_SPOT';
+export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 
 export const receiveSpots = (spots) => ({
   type: RECEIVE_SPOTS,
@@ -13,18 +14,29 @@ export const receiveSpot = (spot) => ({
   spot
 });
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_SPOT_ERRORS,
+  errors
+});
+
 
 export const getSpots = () => dispatch => (
-  APIUtil.fetchSpots().then(spots => dispatch(receiveSpots(spots)))
+  APIUtil.fetchSpots().then(spots => dispatch(receiveSpots(spots)),
+    err => (dispatch(receiveErrors(err.responseJSON))
+  ))
 );
 
 export const getSpot = (id) => dispatch => (
-  APIUtil.fetchSpot(id).then(spot => dispatch(receiveSpot(spot)))
+  APIUtil.fetchSpot(id).then(spot => dispatch(receiveSpot(spot)),
+    err => (dispatch(receiveErrors(err.responseJSON))))
 );
 
 export const createSpot = spot => dispatch => (
  APIUtil.createSpot(spot).then(newSpot => {
- 	dispatch(receiveSpot(newSpot));
-	 return newSpot;
+ 	dispatch(receiveSpot(newSpot)),
+    err => (dispatch(receiveErrors(err.responseJSON)));
+    if (newSpot) {
+      return newSpot;
+    }
  })
 );
