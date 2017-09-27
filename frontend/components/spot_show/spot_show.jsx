@@ -14,12 +14,21 @@ class SpotShow extends React.Component {
     };
   }
 
+  componentWillMount() {
+    console.log("premount spot:", this.props.spot);
+    this.props.getUser(this.props.spot.host_id)
+      .then((user) => this.state.host = user)
+      .then(console.log("premount host:", this.state.host));
+  }
+
   componentDidMount() {
     console.log("pprops:", this.props);
     console.log("sspot:", this.props.spot);
+    console.log("host_id", this.props.spot.host_id);
+    console.log("postmount host:", this.state.host);
     window.scrollTo(0,0);
-    this.props.getSpot().then((spot) => this.state.host = this.props.getUser(spot.host_id))
-      .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
+    // this.props.getSpot().then((spot) => this.state.host = this.props.getUser(spot.host_id))
+    //   .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
   }
 
   render() {

@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:user][:id])
+    @user = User.find_by_id(params[:id])
     render :show
   end
 
