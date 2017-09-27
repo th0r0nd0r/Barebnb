@@ -38,13 +38,43 @@ background: lightgray;
 
 }
 
+.title-and-host-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 24px;
+}
+
+.host-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.host-avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+
+.host-name {
+  font-family: 'Open Sans', sans-serif;
+  color: #484848;
+  font-size: 12pt;
+  font-weight: 300;
+}
+
 .spot-show-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #484848;
-  font-size: 30pt;
-  margin-bottom: 20px;
-  margin-top: 35px;
+  font-size: 36pt;
+  margin-bottom: 25px;
 }
 
 .spot-show-text-container {

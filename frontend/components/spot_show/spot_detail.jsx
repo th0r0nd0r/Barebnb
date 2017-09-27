@@ -35,13 +35,20 @@ class SpotDetail extends React.Component {
   render() {
     console.log("host:", this.props.host);
     const spot = this.props.spot;
+    const host = this.props.host;
     return(
       <div className="spot-detail">
         <style>
           @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
         </style>
         <img className="spot-show-image" src={spot.img_url} />
-        <h1 className="spot-show-title">{spot.title}</h1>
+        <div className="title-and-host-info">
+          <h1 className="spot-show-title">{spot.title}</h1>
+          <div className="host-info">
+            <img className="host-avatar" src={host.img_url} />
+            <h4 className="spot-show-body">{host.username}</h4>
+          </div>
+        </div>
         <hr className="hr" />
         <div className="spot-show-text-container">
           <div className="spot-show-price">${spot.price}</div>
