@@ -48,7 +48,7 @@ export const createSpot = spot => dispatch => (
 );
 
 export const createReview = review => dispatch => (
-  APIUtil.createReview(review).then(newReview => (dispatch(createReview(newReview)),
+  APIUtil.createReview(review).then(newReview => (dispatch(receiveReview(newReview)),
     err => (dispatch(receiveErrors(err.responseJSON)))
   ))
 );

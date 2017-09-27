@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { getSpot } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
+
 
 import { getUser } from '../../actions/user_actions';
 
@@ -15,6 +17,7 @@ const mapStateToProps = (state, { match }) => {
   return {
     spotId: spotId,
     spot: spot,
+    spots: state.entities.spots,
     currentUser
   };
 };
@@ -24,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
   getUser: id => dispatch(getUser(id))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SpotShow);
+)(SpotShow));

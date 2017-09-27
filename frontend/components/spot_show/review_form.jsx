@@ -36,7 +36,7 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div className="review-form">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label>Rating</label>
           <br />
           <input
@@ -54,7 +54,9 @@ class ReviewForm extends React.Component {
             onChange={this.update("body")}
           />
           <br />
-          <input type="submit" />
+          <button  onClick={this.handleSubmit}>
+            Submit
+          </button>
         </form>
         <button onClick={this.navigateToShow}>Cancel</button>
       </div>
