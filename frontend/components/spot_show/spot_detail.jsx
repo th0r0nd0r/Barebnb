@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// import ReviewShow from './review_show';
+import ReviewShow from './review_show';
 
-// const beds = () => {
-//   if
-// };
+
 
 class SpotDetail extends React.Component {
   constructor(props) {
     super(props);
 
     this.beds = this.beds.bind(this);
-    // this.upperCaseTitle = this.upperCaseTitle.bind(this);
   }
 
   beds() {
@@ -23,14 +20,15 @@ class SpotDetail extends React.Component {
     }
   }
 
-  // upperCaseTitle() {
-  //   console.log("spot:", this.props.spot);
-  //   if (this.props.spot) {
-  //     return this.props.spot.title.toUpperCase();
-  //   } else {
-  //     return this.props.spot.title;
-  //   }
-  // }
+  reviewList(reviews = []) {
+  reviews.map(review => (
+    <ReviewShows
+      rating={review.rating}
+      body={review.body}
+      key={review.id}
+    />
+    ));
+  }
 
   render() {
     console.log("host:", this.props.host);
@@ -58,6 +56,11 @@ class SpotDetail extends React.Component {
         <div className="spot-show-text-container">
           <h2 className="spot-show-header">The Space</h2>
           <p className="spot-show-body">{spot.description}</p>
+        </div>
+        <hr className="hr" />
+        <div className="reviews">
+          <h1 className="spot-show-price">Reviews</h1>
+          {this.reviewList(spot.reviews)}
         </div>
       </div>
     );

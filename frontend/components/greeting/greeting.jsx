@@ -18,6 +18,22 @@ const welcomeMessage = (currentUser, logout) => (
   </div>
 );
 
+const linkOrModal = (currentUser) => {
+  if (currentUser) {
+    return(
+      <Link to="/spots/new">
+        <button className="session-button">
+          Create a Spot
+        </button>
+      </Link>
+    );
+  } else {
+    return (
+      <LoginFormContainer buttonText={'Create a Spot'} />
+    );
+  }
+};
+
 
 const Greeting = ({currentUser, logout}) => (
   <div className="nav-buttons">
@@ -27,11 +43,7 @@ const Greeting = ({currentUser, logout}) => (
         Find a Spot
       </button>
     </Link>
-    <Link to="/spots/new">
-      <button className="session-button">
-        Create a Spot
-      </button>
-    </Link>
+    {linkOrModal(currentUser)}
   </div>
 );
 

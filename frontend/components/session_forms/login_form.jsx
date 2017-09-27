@@ -125,7 +125,6 @@ class LoginForm extends React.Component {
 
   openModal() {
     this.setState({modalIsOpen: true});
-    this.props.history.push("/login");
   }
 
   // afterOpenModal() {
@@ -182,10 +181,18 @@ class LoginForm extends React.Component {
     );
   }
 
+  // buttonText() {
+  //   if (this.props.alternateText) {
+  //     return this.props.alternateText;
+  //   } else {
+  //     return "Login";
+  //   }
+  // }
+
   render() {
     return (
       <div className="modal-form">
-        <button onClick={this.openModal} className="session-button">Login</button>
+        <button onClick={this.openModal} className="session-button">{this.props.buttonText}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

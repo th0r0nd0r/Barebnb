@@ -27,6 +27,7 @@
   box-sizing: border-box;
   border-bottom: 3px solid white;
   margin: 0px 10px;
+  height: 53px;
 }
 
 .session-button:hover {

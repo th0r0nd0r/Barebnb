@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 import SpotDetail from './spot_detail';
 import SpotMap from '../spot_map/spot_map';
+import ReviewFormContainer from './review_form_container';
+import LoginFormContainer from '../session_forms/login_form_container';
 
 import { ProtectedRoute } from '../../util/route_util';
+import { ReviewLink } from '../../util/link_util';
+
 
 class SpotShow extends React.Component {
   constructor(props) {
@@ -31,6 +35,28 @@ class SpotShow extends React.Component {
     //   .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
   }
 
+  linkOrModal(currentUser, spotId) {
+    if (currentUser) {
+      return(
+        <div>
+          <ReviewLink
+            component={ReviewFormContainer}
+            to={`/spots/${spotId}/review`}
+            label="Leave a Review"
+            />
+          <Route
+            path="/spots/:spotId/review"
+            component={ReviewFormContainer}
+            />
+        </div>
+      );
+    } else {
+      return (
+        <LoginFormContainer buttonText={'Leave a Review'} />
+      );
+    }
+  }
+
   render() {
     const { spotId, spot, getSpot, getUser } = this.props;
     const spots = {
@@ -49,6 +75,7 @@ class SpotShow extends React.Component {
 
         <div className="spot-details">
           <SpotDetail spot={spot} host={this.state.host}/>
+          {this.linkOrModal(this.props.currentUser, spotId)}
         </div>
       </div>
     );
