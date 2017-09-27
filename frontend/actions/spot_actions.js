@@ -39,16 +39,19 @@ export const getSpot = (id) => dispatch => (
 
 export const createSpot = spot => dispatch => (
  APIUtil.createSpot(spot).then(newSpot => {
- 	dispatch(receiveSpot(newSpot)),
-    err => (dispatch(receiveErrors(err.responseJSON)));
+ 	dispatch(receiveSpot(newSpot));
     if (newSpot) {
       return newSpot;
     }
- })
+ }, err => (dispatch(receiveErrors(err.responseJSON))))
 );
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(newReview => (dispatch(receiveReview(newReview)),
     err => (dispatch(receiveErrors(err.responseJSON)))
   ))
+);
+
+export const clearErrors = () => dispatch => (
+  dispatch(receiveErrors([]))
 );

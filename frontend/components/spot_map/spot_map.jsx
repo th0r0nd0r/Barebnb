@@ -27,6 +27,7 @@ class SpotMap extends React.Component {
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.registerListeners();
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager.updateMarkers(this.props.spots);
     }
   }
 
@@ -72,7 +73,7 @@ class SpotMap extends React.Component {
   }
 
   handleMarkerClick(spot) {
-    this.props.history.push(`spots/${spot.id}`);
+    this.props.history.push(`/spots/${spot.id}`);
   }
 
   handleClick(coords){

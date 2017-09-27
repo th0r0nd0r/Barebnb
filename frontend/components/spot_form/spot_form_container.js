@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { createSpot } from '../../actions/spot_actions';
+import { createSpot, clearErrors } from '../../actions/spot_actions';
 import SpotForm from './spot_form';
 
 const mapStateToProps = (state, { location }) => ({
@@ -13,7 +13,8 @@ const mapStateToProps = (state, { location }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createSpot: spot => dispatch(createSpot(spot))
+  createSpot: spot => dispatch(createSpot(spot)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default withRouter(connect(

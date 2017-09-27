@@ -25,24 +25,34 @@ class SpotForm extends React.Component {
     });
   }
 
-  updateCoords() {
-    console.log("form history:", this.props.history);
+  updateCoords(nextProps) {
+    console.log("form history:", nextProps.history);
     console.log("new coords:", this.coords);
-    this.coords = {lat: new URLSearchParams(this.props.history.location.search).get("lat"),
-    lng: new URLSearchParams(this.props.history.location.search).get("lng")};
+
+    this.coords = {lat: new URLSearchParams(nextProps.history.location.search).get("lat"),
+    lng: new URLSearchParams(nextProps.history.location.search).get("lng")};
   }
 
   componentDidMount() {
-    window.addEventListener("hashchange", this.updateCoords);
+    // window.addEventListener("hashchange", this.updateCoords);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // debugger;
+    if (this.props.lat !== nextProps.lat || this.props.lng !== nextProps.lng) {
+      this.updateCoords(nextProps);
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener("hashchange", this.updateCoords);
+    this.props.clearErrors();
   }
 
   navigateToShow(newSpot) {
     this.props.history.push(`/spots/${newSpot.id}`);
   }
+
 
   handleSubmit(e) {
     e.preventDefault();

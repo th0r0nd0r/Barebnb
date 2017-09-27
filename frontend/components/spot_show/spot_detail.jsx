@@ -22,7 +22,7 @@ class SpotDetail extends React.Component {
 
   reviewList(reviews = []) {
   reviews.map(review => (
-    <ReviewShows
+    <ReviewShow
       rating={review.rating}
       body={review.body}
       key={review.id}
