@@ -17,6 +17,7 @@ class SpotShow extends React.Component {
   componentDidMount() {
     console.log("pprops:", this.props);
     console.log("sspot:", this.props.spot);
+    window.scrollTo(0,0);
     this.props.getSpot().then((spot) => this.state.host = this.props.getUser(spot.host_id))
       .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
   }
