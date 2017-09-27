@@ -21,3 +21,11 @@ export const createSpot = (spot) => (
     data: spot
   })
 );
+
+export const createReview = (review) => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data: review
+  })
+);
