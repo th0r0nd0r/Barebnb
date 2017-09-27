@@ -12,8 +12,8 @@ const mapStateToProps = (state, { match }) => {
   const spot = selectSpot(state.entities, (match.params.spotId));
   console.log("spot from container:", spot);
   return {
-    spotId,
-    spot
+    spotId: spotId,
+    spot: spot
   };
 };
 

@@ -42,9 +42,16 @@ class SpotDetail extends React.Component {
         </style>
         <img className="spot-show-image" src={spot.img_url} />
         <h1 className="spot-show-title">{spot.title}</h1>
-        <p className="spot-show-description">{spot.description}</p>
-        <div className="spot-show-price">${spot.price}</div>
-        <div className="spot-show-beds">{spot.beds} {this.beds()}</div>
+        <hr className="hr" />
+        <div className="spot-show-text-container">
+          <div className="spot-show-price">${spot.price}</div>
+          <div className="spot-show-body">{spot.beds} {this.beds()}</div>
+        </div>
+        <hr className="hr" />
+        <div className="spot-show-text-container">
+          <h2 className="spot-show-header">The Space</h2>
+          <p className="spot-show-body">{spot.description}</p>
+        </div>
       </div>
     );
   }
