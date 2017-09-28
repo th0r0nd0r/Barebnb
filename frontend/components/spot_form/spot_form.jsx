@@ -80,7 +80,7 @@ class SpotForm extends React.Component {
       <div className="form-and-map">
         <div className="spot-form-container-squared">
           <div className="spot-form-container">
-            <span className="session-errors">{this.renderErrors()}</span>
+            <span className="form-errors">{this.renderErrors()}</span>
             <h1 className="spot-form-title">Create a Spot</h1>
             <form className="spot-form" onSubmit={this.handleSubmit}>
               <div className="spot-form-inputs">

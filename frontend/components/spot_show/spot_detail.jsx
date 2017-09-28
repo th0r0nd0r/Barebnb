@@ -58,8 +58,8 @@ class SpotDetail extends React.Component {
           <p className="spot-show-body">{spot.description}</p>
         </div>
         <hr className="hr" />
-        <div className="reviews">
-          <h1 className="spot-show-price">Reviews</h1>
+        <div className="spot-show-text-container">
+          <h1 className="reviews-title">Reviews</h1>
           {this.reviewList(spot.reviews)}
         </div>
       </div>

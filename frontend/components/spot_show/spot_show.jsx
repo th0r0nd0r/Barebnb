@@ -40,8 +40,8 @@ class SpotShow extends React.Component {
   linkOrModal(currentUser, spotId) {
     if (currentUser) {
       return(
-        <div>
-          <ReviewLink
+        <div >
+          <ReviewLink 
             component={ReviewFormContainer}
             to={`/spots/${spotId}/review`}
             label="Leave a Review"
