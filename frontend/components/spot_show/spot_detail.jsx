@@ -21,7 +21,6 @@ class SpotDetail extends React.Component {
   }
 
   reviewList(reviews = []) {
-    console.log("reviews:", reviews);
     return reviews.map(review => (
       <Review
         rating={review.rating}
@@ -31,10 +30,15 @@ class SpotDetail extends React.Component {
     ));
   }
 
+  reviewCount(reviews = []) {
+    return reviews.length;
+  }
+
   render() {
     console.log("host:", this.props.host);
     const spot = this.props.spot;
     const host = this.props.host;
+    // const reviewCount = spot.reviews.length;
     return(
       <div className="spot-detail">
         <style>
@@ -60,7 +64,7 @@ class SpotDetail extends React.Component {
         </div>
         <hr className="hr" />
         <div className="spot-show-text-container">
-          <h1 className="reviews-title">Reviews</h1>
+          <h1 className="reviews-title">{this.reviewCount(spot.reviews)} Reviews</h1>
           {this.reviewList(spot.reviews)}
         </div>
       </div>
