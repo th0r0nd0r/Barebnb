@@ -177,10 +177,31 @@ background: lightgray;
   font-family: "Open Sans";
 }
 
+.review-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .author-avatar {
   width: 48px;
   height: 48px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 6px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.centered-text-container {
+  text-align: center;
+}
+
+.author-name {
+  display: inline-block;
 }

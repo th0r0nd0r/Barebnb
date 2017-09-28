@@ -21,15 +21,21 @@ class SpotDetail extends React.Component {
   }
 
   reviewList(reviews = []) {
-    return reviews.map(review => (
-      <Review
-        rating={review.rating}
-        body={review.body}
-        authorName={review[review.author_id].username}
-        authorImage={review[review.author_id].img_url}
-        key={review.id}
-      />
-    ));
+    console.log("reviews:", reviews);
+    if (reviews.length > 0) {
+      return reviews.map(review => {
+        console.log("review:", review);
+        return(<Review
+          rating={review.rating}
+          body={review.body}
+          authorName={review[review.author_id].username}
+          authorImage={review[review.author_id].img_url}
+          key={review.id}
+          />
+        );
+      }
+    );
+    }
   }
 
   reviewCount(reviews = []) {

@@ -13,6 +13,9 @@ const SpotsReducer = (state = {}, action) => {
       return merge({}, state, newSpot);
     case RECEIVE_REVIEW:
       const review = action.review;
+      const user = review.user;
+      delete review.user;
+      review[review.author_id] = user;
       newState[review.spot_id].reviews.push(review);
       return newState;
     default:
