@@ -137,7 +137,7 @@ background: lightgray;
 }
 
 .leave-review-button-container {
-  height: 67px;
+  height: 57px;
   margin-top: 15px;
   /*display: flex;
   align-items: center;*/
@@ -153,5 +153,20 @@ background: lightgray;
   border: none;
   width: 300px;
   margin-top: 15px;
+  font-family: "Open Sans";
+}
+
+.leave-review-login-button {
+  background: #487AB4;
+  font-size: 20px;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  width: 180.91px;
+  height: 47px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   font-family: "Open Sans";
 }

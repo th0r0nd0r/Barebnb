@@ -41,7 +41,7 @@ class SpotShow extends React.Component {
     if (currentUser) {
       return(
         <div >
-          <ReviewLink 
+          <ReviewLink
             component={ReviewFormContainer}
             to={`/spots/${spotId}/review`}
             label="Leave a Review"
@@ -54,7 +54,7 @@ class SpotShow extends React.Component {
       );
     } else {
       return (
-        <LoginFormContainer buttonText={'Leave a Review'} />
+        <LoginFormContainer className="leave-review-button" buttonText={'Leave a Review'} />
       );
     }
   }

@@ -181,18 +181,22 @@ class LoginForm extends React.Component {
     );
   }
 
-  // buttonText() {
-  //   if (this.props.alternateText) {
-  //     return this.props.alternateText;
-  //   } else {
-  //     return "Login";
-  //   }
-  // }
+  whichButton() {
+    if (this.props.buttonText === 'Leave a Review') {
+      return (
+        <button onClick={this.openModal} className="leave-review-login-button">{this.props.buttonText}</button>
+      );
+    } else {
+      return (
+        <button onClick={this.openModal} className="session-button">{this.props.buttonText}</button>
+      );
+    }
+  }
 
   render() {
     return (
       <div className="modal-form">
-        <button onClick={this.openModal} className="session-button">{this.props.buttonText}</button>
+        {this.whichButton()}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
