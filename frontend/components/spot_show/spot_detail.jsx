@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import ReviewShow from './review_show';
+import Review from './review_show';
 
 
 
@@ -21,12 +21,13 @@ class SpotDetail extends React.Component {
   }
 
   reviewList(reviews = []) {
-  reviews.map(review => (
-    <ReviewShow
-      rating={review.rating}
-      body={review.body}
-      key={review.id}
-    />
+    console.log("reviews:", reviews);
+    return reviews.map(review => (
+      <Review
+        rating={review.rating}
+        body={review.body}
+        key={review.id}
+      />
     ));
   }
 
