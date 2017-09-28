@@ -39,7 +39,7 @@ class ReviewForm extends React.Component {
         <form>
           <label className="spot-show-body">Rating</label>
           <br />
-          <input className="session-form-input"
+          <input className="session-form-input rating-input"
             type="number"
             value={this.state.rating}
             onChange={this.update("rating")}
