@@ -65,7 +65,7 @@ class SpotDetail extends React.Component {
         <hr className="hr" />
         <div className="spot-show-text-container">
           <h1 className="reviews-title">{this.reviewCount(spot.reviews)} Reviews</h1>
-          {this.reviewList(spot.reviews)}
+        {this.reviewList(spot.reviews)}
         </div>
       </div>
     );
