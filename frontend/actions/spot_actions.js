@@ -26,8 +26,8 @@ export const receiveReview = review => ({
 });
 
 
-export const getSpots = () => dispatch => (
-  APIUtil.fetchSpots().then(spots => dispatch(receiveSpots(spots)),
+export const getSpots = filters => dispatch => (
+  APIUtil.fetchSpots(filters).then(spots => dispatch(receiveSpots(spots)),
     err => (dispatch(receiveErrors(err.responseJSON))
   ))
 );

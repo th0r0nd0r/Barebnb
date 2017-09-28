@@ -57,7 +57,7 @@ class SpotDetail extends React.Component {
           <h1 className="spot-show-title">{spot.title}</h1>
           <div className="host-info">
             <img className="host-avatar" src={host.img_url} />
-            <h4 className="host-name">{host.username}</h4>
+            <h4 className="host-name author-name">{host.username}</h4>
           </div>
         </div>
         <hr className="hr" />
