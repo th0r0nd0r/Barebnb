@@ -8,7 +8,6 @@ const SpotErrorsReducer = (state = [], action) => {
       } else {
         return state;
       }
-
     default:
       return state;
   }

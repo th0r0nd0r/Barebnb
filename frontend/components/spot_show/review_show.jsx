@@ -1,10 +1,14 @@
 import React from 'react';
+import Rating from 'react-rating';
 
 const Review = ({ rating, body, authorImage, authorName }) => (
   <div>
     <hr className="hr" />
     <div className="review-info">
-      <h3 className="spot-show-header">Rating: {rating}</h3>
+      <Rating
+        initialRate={rating}
+        readonly={true}
+        />
       <div className="author-info">
         <img className="author-avatar" src={authorImage} />
         <div className="centered-text-container">

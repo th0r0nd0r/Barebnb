@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 
-import { createReview } from '../../actions/spot_actions';
+import { createReview, clearErrors } from '../../actions/spot_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.errors.spot
 });
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(

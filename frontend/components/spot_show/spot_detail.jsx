@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Rating from 'react-rating';
 
 import Review from './review_show';
 
@@ -21,10 +22,10 @@ class SpotDetail extends React.Component {
   }
 
   reviewList(reviews = []) {
-    console.log("reviews:", reviews);
+    // console.log("reviews:", reviews);
     if (reviews.length > 0) {
       return reviews.map(review => {
-        console.log("review:", review);
+        // console.log("review:", review);
         return(<Review
           rating={review.rating}
           body={review.body}
@@ -42,6 +43,7 @@ class SpotDetail extends React.Component {
     return reviews.length;
   }
 
+
   render() {
     console.log("host:", this.props.host);
     const spot = this.props.spot;
@@ -54,7 +56,13 @@ class SpotDetail extends React.Component {
         </style>
         <img className="spot-show-image" src={spot.img_url} />
         <div className="title-and-host-info">
-          <h1 className="spot-show-title">{spot.title}</h1>
+          <div className="title-and-rating">
+            <h1 className="spot-show-title">{spot.title}</h1>
+          <Rating
+              initialRate={spot.averageRating}
+              readonly={true}
+            />
+          </div>
           <div className="host-info">
             <img className="host-avatar" src={host.img_url} />
             <h4 className="host-name author-name">{host.username}</h4>

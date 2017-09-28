@@ -18,4 +18,8 @@ class Spot < ApplicationRecord
         .where("lng > ?", bounds[:southWest][:lng])
         .where("lng < ?", bounds[:northEast][:lng])
   end
+
+  def average_rating
+    self.reviews.average(:rating)
+  end
 end
