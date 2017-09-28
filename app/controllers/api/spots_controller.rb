@@ -20,6 +20,8 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+
+
   def spot_params
     params.require(:spot).permit(
       :title,
