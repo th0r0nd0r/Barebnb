@@ -19,15 +19,17 @@ class SpotMap extends React.Component {
   }
 
   componentDidMount() {
-    // console.log("props:", this.props);
+    console.log("map props:", this.props);
     const map = this.refs.map;
     if (this.props.singleSpot) {
       this.props.getSpot(this.props.spotId);
     } else {
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.registerListeners();
-      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-      this.MarkerManager.updateMarkers(this.props.spots);
+      if (this.props.updateFilter) {
+        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+        this.MarkerManager.updateMarkers(this.props.spots);
+      }
     }
   }
 
@@ -53,19 +55,21 @@ class SpotMap extends React.Component {
       // console.log(this.map);
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers([targetSpot]);
-    } else {
+    } else if (this.props.updateFilter) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
   }
 
   registerListeners() {
-    this.map.addListener( 'idle', () => {
-      const { north, south, east, west } = this.map.getBounds().toJSON();
-      const bounds = {
-        northEast: { lat: north, lng: east },
-        southWest: { lat: south, lng: west } };
-      this.props.updateFilter('bounds', bounds);
-    });
+    if (this.props.updateFilter) {
+      this.map.addListener( 'idle', () => {
+        const { north, south, east, west } = this.map.getBounds().toJSON();
+        const bounds = {
+          northEast: { lat: north, lng: east },
+          southWest: { lat: south, lng: west } };
+          this.props.updateFilter('bounds', bounds);
+        });
+    }
     this.map.addListener( 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
