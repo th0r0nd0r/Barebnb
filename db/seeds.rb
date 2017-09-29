@@ -174,4 +174,14 @@ demo_users = User.create([
       beds: 3,
       img_url: 'https://images.unsplash.com/8/green-bike.jpg?dpr=1&auto=compress,format&fit=crop&w=1353&h=&q=80&cs=tinysrgb&crop='
     },
+    {
+      title: "Old Church",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 38.50948995925553,
+      lng: -123.19158554077148,
+      host_id: 3,
+      price: 70,
+      beds: 2,
+      img_url: 'https://images.unsplash.com/photo-1501260917196-884cdbe19108?dpr=1&auto=compress,format&fit=crop&w=1280&h=&q=80&cs=tinysrgb&crop='
+    },
     ])
