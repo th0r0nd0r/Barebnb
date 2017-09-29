@@ -6,7 +6,7 @@ import SpotMap from '../spot_map/spot_map';
 import ReviewFormContainer from './review_form_container';
 import LoginFormContainer from '../session_forms/login_form_container';
 import SpotUpdateFormContainer from '../spot_form/spot_update_form_container';
-
+import Calendar from '../calendar/calendar';
 
 import { ProtectedRoute } from '../../util/route_util';
 import { ReviewLink } from '../../util/link_util';
@@ -105,6 +105,10 @@ class SpotShow extends React.Component {
           <button className="session-submit-button" onClick={this.delete}>
             Delete Spot
           </button>
+        </div>
+
+        <div>
+          <Calendar />
         </div>
       </div>
     );

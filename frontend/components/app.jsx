@@ -19,7 +19,7 @@ import SpotUpdateFormContainer from './spot_form/spot_update_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Header from './header/header';
 import Main from './main/main';
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 
 const App = () => (
