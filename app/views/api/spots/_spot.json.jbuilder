@@ -5,7 +5,7 @@ if spot
     json.array! spot.reviews do |review|
       json.extract! review, :id, :body, :rating, :author_id, :spot_id
       json.set! review.author.id do
-        json.extract! review.author, :img_url, :username
+        json.extract! review.author, :id, :img_url, :username
       end
     end
   end

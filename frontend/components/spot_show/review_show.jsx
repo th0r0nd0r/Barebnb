@@ -7,11 +7,18 @@ import ReviewEditFormContainer from './review_edit_form_container';
 class Review extends React.Component {
   constructor(props) {
     super(props);
+
+    this.maybeButtons = this.maybeButtons.bind(this);
   }
 
-  // maybeButtons() {
-  //   if (this.props.)
-  // }
+  maybeButtons() {
+    const {id, body, rating, authorId } = this.props;
+    if (this.props.authorId === this.props.currentUser.id) {
+      return(
+        <ReviewEditFormContainer id={id} body={body} rating={rating} />
+      );
+    }
+  }
 
   render() {
     const { rating, body, authorImage, authorName, id } = this.props;
@@ -24,7 +31,7 @@ class Review extends React.Component {
               initialRate={rating}
               readonly={true}
               />
-            <ReviewEditFormContainer id={id} body={body} rating={rating} />
+            {this.maybeButtons()}
           </div>
           <div className="author-info">
             <img className="author-avatar" src={authorImage} />

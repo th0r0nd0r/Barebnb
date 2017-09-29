@@ -33,6 +33,7 @@ class SpotDetail extends React.Component {
           body={review.body}
           authorName={review[review.author_id].username}
           authorImage={review[review.author_id].img_url}
+          authorId={review[review.author_id].id}
           key={review.id}
           currentUser={this.props.currentUser}
           />
