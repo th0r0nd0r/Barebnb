@@ -18,7 +18,7 @@ content : {
   position                   : 'absolute',
   width                      : '450px',
   height                     : 'auto',
-  minHeight                  : '350px',
+  minHeight                  : '400px',
   top                        : '200px',
   left                       : '50%',
   transform                  : 'translate(-50%, 0)',

@@ -89,7 +89,11 @@ class SpotShow extends React.Component {
         </div>
 
         <div className="spot-buttons">
-          <SpotEditFormContainer />
+          <Link to={`/spots/${spotId}/update`}>
+            <button className="session-button">
+              Update Spot
+            </button>
+          </Link>
         </div>
       </div>
     );
