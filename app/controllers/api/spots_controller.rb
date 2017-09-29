@@ -20,6 +20,15 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+  def update
+    @spot = Spot.find(parans[:id])
+    if @spot.update(spot_params)
+      render :show
+    else
+      render json: @spot.errors.full_messages, status: 422
+    end
+  end
+
 
 
   def spot_params
