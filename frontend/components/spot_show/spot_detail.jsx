@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Rating from 'react-rating';
 
 import Review from './review_show';
+// import ReviewShowContainer from './review_show_container';
 
 
 
@@ -28,6 +29,7 @@ class SpotDetail extends React.Component {
       return reviews.map(review => {
         console.log("review:", review);
         return(<Review
+          spotId={this.props.spot.id}
           id={review.id}
           rating={review.rating}
           body={review.body}
@@ -36,6 +38,8 @@ class SpotDetail extends React.Component {
           authorId={review[review.author_id].id}
           key={review.id}
           currentUser={this.props.currentUser}
+          getSpot={this.props.getSpot}
+          deleteReview={this.props.deleteReview}
           />
         );
       }
@@ -63,7 +67,7 @@ class SpotDetail extends React.Component {
           <div className="title-and-rating">
             <h1 className="spot-show-title">{spot.title}</h1>
           <Rating
-              initialRate={spot.averageRating}
+              initialRate={parseFloat(spot.averageRating)}
               readonly={true}
             />
           </div>

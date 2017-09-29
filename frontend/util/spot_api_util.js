@@ -23,6 +23,21 @@ export const createSpot = (spot) => (
   })
 );
 
+export const updateSpot = spot => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/spots/${spot.id}`,
+    data: spot
+  })
+);
+
+export const deleteSpot = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/spots/${id}`
+  })
+);
+
 export const createReview = (review) => (
   $.ajax({
     method: 'POST',
@@ -36,5 +51,12 @@ export const updateReview = review => (
     method: 'PATCH',
     url: `api/reviews/${review.review.id}`,
     data: review
+  })
+);
+
+export const deleteReview = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/reviews/${id}`
   })
 );

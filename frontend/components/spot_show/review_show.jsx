@@ -9,13 +9,29 @@ class Review extends React.Component {
     super(props);
 
     this.maybeButtons = this.maybeButtons.bind(this);
+    // this.navigateToShow = this.navigateToShow.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  // navigateToSpotShow() {
+  //   this.props.history.push(`/spots/${this.props.spotId}`);
+  // }
+
+  handleClick(e) {
+    e.preventDefault();
+    console.log("clicked:", this.props.getSpot);
+    this.props.deleteReview(this.props.id);
   }
 
   maybeButtons() {
     const {id, body, rating, authorId } = this.props;
     if (this.props.authorId === this.props.currentUser.id) {
       return(
-        <ReviewEditFormContainer id={id} body={body} rating={rating} />
+        <div className="edit-delete-review-buttons">
+          <ReviewEditFormContainer id={id} body={body} rating={rating} />
+          <button
+            onClick={this.handleClick}>Delete Review</button>
+        </div>
       );
     }
   }

@@ -79,7 +79,10 @@ class SpotShow extends React.Component {
           <SpotDetail
             spot={spot}
             host={this.state.host}
-            currentUser={this.props.currentUser}/>
+            currentUser={this.props.currentUser}
+            getSpot={this.props.getSpot}
+            deleteReview={this.props.deleteReview}
+            />
           {this.linkOrModal(this.props.currentUser, spotId)}
         </div>
       </div>

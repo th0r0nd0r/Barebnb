@@ -1,4 +1,4 @@
-import { RECEIVE_SPOTS, RECEIVE_SPOT, RECEIVE_REVIEW, UPDATE_REVIEW } from '../actions/spot_actions';
+import { RECEIVE_SPOTS, RECEIVE_SPOT, RECEIVE_REVIEW, UPDATE_REVIEW, DELETE_REVIEW } from '../actions/spot_actions';
 import merge from 'lodash/merge';
 
 const SpotsReducer = (state = {}, action) => {
@@ -10,12 +10,12 @@ const SpotsReducer = (state = {}, action) => {
       return action.spots;
     case RECEIVE_SPOT:
       const newSpot = {[action.spot.id]: action.spot};
-      return merge({}, state, newSpot);
+      return merge({}, newState, newSpot);
     case RECEIVE_REVIEW:
       const review = action.review;
-      const user = review.user;
-      delete review.user;
-      review[review.author_id] = user;
+      // const user = review.user;
+      // delete review.user;
+      // review[review.author_id] = user;
       newState[review.spot_id].reviews.push(review);
       return newState;
     case UPDATE_REVIEW:
@@ -27,6 +27,12 @@ const SpotsReducer = (state = {}, action) => {
             rev[key] = updatedReview[key];
           });
         }}
+      );
+      return newState;
+    case DELETE_REVIEW:
+      const deleted = action.review;
+      delete newState[deleted.spot_id].reviews.find(
+        (rev) => (rev.id === deleted.id)
       );
       return newState;
     default:

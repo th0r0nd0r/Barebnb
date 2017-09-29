@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { createReview, clearErrors } from '../../actions/spot_actions';
+import { createReview, clearErrors, getSpot } from '../../actions/spot_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  getSpot: (id) => dispatch(getSpot(id))
 });
 
 export default connect(

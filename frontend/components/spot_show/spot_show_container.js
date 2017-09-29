@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { getSpot } from '../../actions/spot_actions';
+import { getSpot, deleteReview } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
 
 
@@ -24,7 +24,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   getSpot: id => dispatch(getSpot(id)),
-  getUser: id => dispatch(getUser(id))
+  getUser: id => dispatch(getUser(id)),
+  deleteReview: id => dispatch(deleteReview(id))
 });
 
 export default withRouter(connect(

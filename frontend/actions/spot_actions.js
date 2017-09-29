@@ -5,6 +5,7 @@ export const RECEIVE_SPOT = 'RECEIVE_SPOT';
 export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const UPDATE_REVIEW  = 'UPDATE_REVIEW';
+export const DELETE_REVIEW = 'DELETE_REVIEW';
 
 
 export const receiveSpots = (spots) => ({
@@ -32,6 +33,11 @@ export const patchReview = review => ({
   review
 });
 
+export const destroyReview = review => ({
+  type: DELETE_REVIEW,
+  review
+});
+
 
 export const getSpots = filters => dispatch => (
   APIUtil.fetchSpots(filters).then(spots => dispatch(receiveSpots(spots)),
@@ -54,8 +60,12 @@ export const createSpot = spot => dispatch => (
 );
 
 export const createReview = review => dispatch => (
-  APIUtil.createReview(review).then(newReview => (dispatch(receiveReview(newReview))))
-    .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+  APIUtil.createReview(review).then(
+    newReview => {
+      console.log("newReview:", newReview);
+    return(() => dispatch(receiveReview(newReview)));
+})
+  .fail(err => (dispatch(receiveErrors(err.responseJSON))))
 );
 
 export const updateReview = review => dispatch => (
@@ -64,6 +74,12 @@ export const updateReview = review => dispatch => (
     return(dispatch(patchReview(updatedReview)));
   })
     .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+);
+
+export const deleteReview = id => dispatch => (
+  APIUtil.deleteReview(id).then((deleted) => {
+    return(dispatch(getSpot(deleted.spot_id)));
+  })
 );
 
 export const clearErrors = () => dispatch => (
