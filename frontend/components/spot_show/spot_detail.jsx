@@ -23,15 +23,18 @@ class SpotDetail extends React.Component {
 
   reviewList(reviews = []) {
     // console.log("reviews:", reviews);
+    // debugger;
     if (reviews.length > 0) {
       return reviews.map(review => {
-        // console.log("review:", review);
+        console.log("review:", review);
         return(<Review
+          id={review.id}
           rating={review.rating}
           body={review.body}
           authorName={review[review.author_id].username}
           authorImage={review[review.author_id].img_url}
           key={review.id}
+          currentUser={this.props.currentUser}
           />
         );
       }

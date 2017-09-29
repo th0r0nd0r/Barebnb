@@ -4,6 +4,8 @@ export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SPOT = 'RECEIVE_SPOT';
 export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const UPDATE_REVIEW  = 'UPDATE_REVIEW';
+
 
 export const receiveSpots = (spots) => ({
   type: RECEIVE_SPOTS,
@@ -22,6 +24,11 @@ export const receiveErrors = errors => ({
 
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,
+  review
+});
+
+export const patchReview = review => ({
+  type: UPDATE_REVIEW,
   review
 });
 
@@ -48,6 +55,14 @@ export const createSpot = spot => dispatch => (
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(newReview => (dispatch(receiveReview(newReview))))
+    .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+);
+
+export const updateReview = review => dispatch => (
+  APIUtil.updateReview(review).then(updatedReview => {
+    // console.log("updatedReview:", updatedReview);
+    return(dispatch(patchReview(updatedReview)));
+  })
     .fail(err => (dispatch(receiveErrors(err.responseJSON))))
 );
 

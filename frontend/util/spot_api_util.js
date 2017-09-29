@@ -30,3 +30,11 @@ export const createReview = (review) => (
     data: review
   })
 );
+
+export const updateReview = review => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/reviews/${review.review.id}`,
+    data: review
+  })
+);

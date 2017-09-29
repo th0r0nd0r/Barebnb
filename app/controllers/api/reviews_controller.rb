@@ -11,6 +11,16 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      render :show
+    else
+      render json: ["Review field can't be blank"], status: :unprocessable_entity
+    end
+  end
+
+
   private
 
   def review_params
