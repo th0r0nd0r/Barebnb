@@ -66,7 +66,7 @@ class SpotShow extends React.Component {
 
   maybeButtons() {
     const spotId = this.props.spotId;
-    if (this.props.spot.host_id === this.props.currentUser.id) {
+    if (this.props.currentUser && (this.props.spot.host_id === this.props.currentUser.id)) {
       return (
         <div className="spot-buttons">
           <Link to={`/spots/${spotId}/update`}>
