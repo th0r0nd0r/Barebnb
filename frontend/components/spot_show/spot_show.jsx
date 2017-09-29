@@ -117,13 +117,7 @@ class SpotShow extends React.Component {
 
         {this.maybeButtons()}
 
-        <div>
-          <Calendar
-            guestId={this.props.currentUser.id}
-            spotId={this.props.spotId}
-            createBooking={this.props.createBooking}
-            />
-        </div>
+
       </div>
     );
   }

@@ -6,6 +6,10 @@ import Review from './review_show';
 // import ReviewShowContainer from './review_show_container';
 
 
+const ratingStyle = {
+  color: 'yellow'
+};
+
 
 class SpotDetail extends React.Component {
   constructor(props) {
@@ -67,6 +71,8 @@ class SpotDetail extends React.Component {
           <div className="title-and-rating">
             <h1 className="spot-show-title">{spot.title}</h1>
           <Rating
+              className="rating"
+              style={ratingStyle}
               initialRate={parseFloat(spot.averageRating)}
               readonly={true}
             />

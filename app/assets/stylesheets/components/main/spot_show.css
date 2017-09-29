@@ -205,3 +205,47 @@ background: lightgray;
 .author-name {
   display: inline-block;
 }
+
+.edit-delete-review-buttons {
+
+}
+
+.delete-review-button {
+  background: #487AB4;
+  font-size: 9pt;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+}
+.edit-review-button {
+  background: #487AB4;
+  font-size: 9pt;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 2px;
+}
+
+.delete-review-button:hover {
+  cursor: pointer;
+}
+.edit-review-button:hover {
+  cursor: pointer;
+}
+
+.rating-and-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+}
+
+/*.rating span span span {
+  background-color: yellow;
+}*/
+
+.review-info {
+
+}

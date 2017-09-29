@@ -18,7 +18,7 @@ content : {
   position                   : 'absolute',
   width                      : '450px',
   height                     : 'auto',
-  minHeight                  : '400px',
+  minHeight                  : '500px',
   top                        : '200px',
   left                       : '50%',
   transform                  : 'translate(-50%, 0)',
@@ -117,7 +117,7 @@ class ReviewEditForm extends React.Component {
   render() {
     return (
       <div className="modal-form">
-        <button onClick={this.openModal}>Edit Review</button>
+        <button className="edit-review-button" onClick={this.openModal}>Edit Review</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -128,7 +128,7 @@ class ReviewEditForm extends React.Component {
 
           <div className="review-form">
             <span className="form-errors">{this.renderErrors()}</span>
-            <h1>Edit Review</h1>
+            <h1 className="spot-show-header">Edit Review</h1>
             <form >
               <label className="spot-show-body">Rating</label>
               <br />

@@ -30,7 +30,9 @@ class Review extends React.Component {
         <div className="edit-delete-review-buttons">
           <ReviewEditFormContainer id={id} body={body} rating={rating} />
           <button
-            onClick={this.handleClick}>Delete Review</button>
+            className="delete-review-button"
+            onClick={this.handleClick}
+            >Delete Review</button>
         </div>
       );
     }
@@ -43,7 +45,7 @@ class Review extends React.Component {
         <hr className="hr" />
         <div className="review-info">
           <div className="rating-and-buttons">
-            <Rating
+            <Rating className="rating"
               initialRate={rating}
               readonly={true}
               />
