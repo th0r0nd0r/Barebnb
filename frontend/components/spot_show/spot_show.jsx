@@ -20,6 +20,7 @@ class SpotShow extends React.Component {
     };
 
     this.delete = this.delete.bind(this);
+    this.maybeButtons = this.maybeButtons.bind(this);
   }
 
   componentWillMount() {
@@ -63,6 +64,24 @@ class SpotShow extends React.Component {
     }
   }
 
+  maybeButtons() {
+    const spotId = this.props.spotId;
+    if (this.props.spot.host_id === this.props.currentUser.id) {
+      return (
+        <div className="spot-buttons">
+          <Link to={`/spots/${spotId}/update`}>
+            <button className="session-submit-button">
+              Update Spot
+            </button>
+          </Link>
+          <button className="session-submit-button" onClick={this.delete}>
+            Delete Spot
+          </button>
+        </div>
+      );
+    }
+  }
+
   delete(e) {
     e.preventDefault();
     this.props.deleteSpot(this.props.spotId)
@@ -96,19 +115,14 @@ class SpotShow extends React.Component {
           {this.linkOrModal(this.props.currentUser, spotId)}
         </div>
 
-        <div className="spot-buttons">
-          <Link to={`/spots/${spotId}/update`}>
-            <button className="session-submit-button">
-              Update Spot
-            </button>
-          </Link>
-          <button className="session-submit-button" onClick={this.delete}>
-            Delete Spot
-          </button>
-        </div>
+        {this.maybeButtons()}
 
         <div>
-          <Calendar />
+          <Calendar
+            guestId={this.props.currentUser.id}
+            spotId={this.props.spotId}
+            createBooking={this.props.createBooking}
+            />
         </div>
       </div>
     );

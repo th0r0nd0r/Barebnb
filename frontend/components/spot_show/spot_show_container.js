@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { getSpot, deleteReview, deleteSpot } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
+import { createBooking } from "../../actions/booking_actions";
 
 
 import { getUser } from '../../actions/user_actions';
@@ -23,6 +24,7 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  createBooking: (userId, booking) => dispatch(createBooking(userId, booking)),
   deleteSpot: id => dispatch(deleteSpot(id)),
   getSpot: id => dispatch(getSpot(id)),
   getUser: id => dispatch(getUser(id)),
