@@ -136,7 +136,7 @@ demo_users = User.create([
     },
     {
       title: "Rustic Teepee",
-      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
       lat: 37.920367835943516,
       lng: -121.91991806030273,
       host_id: 7,
@@ -146,7 +146,7 @@ demo_users = User.create([
     },
     {
       title: "Rough it on the Ranch",
-      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
       lat: 38.28346905497185,
       lng: -122.96087265014648,
       host_id: 5,
@@ -156,7 +156,7 @@ demo_users = User.create([
     },
     {
       title: "Refurbished Van- Plush Interior",
-      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       lat: 37.37233994582318,
       lng: -122.39233016967773,
       host_id: 8,
@@ -166,7 +166,7 @@ demo_users = User.create([
     },
     {
       title: "Custom-Built Shed",
-      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       lat: 37.56417412088097,
       lng: -121.45849227905273,
       host_id: 6,
@@ -176,7 +176,7 @@ demo_users = User.create([
     },
     {
       title: "Old Church",
-      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       lat: 38.50948995925553,
       lng: -123.19158554077148,
       host_id: 3,
