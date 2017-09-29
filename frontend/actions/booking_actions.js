@@ -32,3 +32,18 @@ export const getBooking = (userId, bookingId) => dispatch => (
   err => dispatch(receiveErrors(err.responseJSON))
 )
 );
+
+export const createBooking = (userId, booking) => dispatch => (
+  APIUtil.createBooking(userId, booking)
+  .then(newBooking => dispatch(receiveBooking(newBooking)),
+  err => dispatch(receiveErrors(err.responseJSON))
+)
+);
+
+export const updateBooking = (userId, booking) => dispatch => (
+  APIUtil.updateBooking(userId, booking)
+);
+
+export const deleteBooking = (userId, bookingId) => dispatch => (
+  APIUtil.deleteBooking(userId, bookingId)
+);
