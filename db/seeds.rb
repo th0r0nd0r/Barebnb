@@ -92,7 +92,7 @@ demo_users = User.create([
       host_id: 3,
       price: 20,
       beds: 1,
-      img_url: 'https://cdn.shopify.com/s/files/1/0167/0460/products/Pastel_4ae3b5cd-6295-4a66-b1d1-e2b31566f5dc.jpg?v=1496943355'
+      img_url: 'https://images.unsplash.com/photo-1484301548518-d0e0a5db0fc8?dpr=1&auto=compress,format&fit=crop&w=1350&h=&q=80&cs=tinysrgb&crop='
     },
     {
       title: "Double-Decker Van Home",
@@ -102,7 +102,7 @@ demo_users = User.create([
       host_id: 0,
       price: 40,
       beds: 2,
-      img_url: 'https://i.pinimg.com/736x/7a/25/37/7a2537b3372a5f0ebd5122cd6f398ae6--vw-camper-vans-vw-vans.jpg'
+      img_url: 'https://images.unsplash.com/photo-1502113040754-9e3e85618a00?dpr=1&auto=compress,format&fit=crop&w=1350&h=&q=80&cs=tinysrgb&crop='
     },
     {
       title: "Modern Yurt-Style Tent",
@@ -133,5 +133,45 @@ demo_users = User.create([
       price: 200,
       beds: 1,
       img_url: 'http://i.dailymail.co.uk/i/pix/2014/01/16/article-0-1AB3929700000578-919_964x518.jpg'
-    }
+    },
+    {
+      title: "Rustic Teepee",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 37.920367835943516,
+      lng: -121.91991806030273,
+      host_id: 7,
+      price: 30,
+      beds: 2,
+      img_url: 'https://images.unsplash.com/photo-1479244209311-71e35c910f59?dpr=1&auto=compress,format&fit=crop&w=1350&h=&q=80&cs=tinysrgb&crop='
+    },
+    {
+      title: "Rough it on the Ranch",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 38.28346905497185,
+      lng: -122.96087265014648,
+      host_id: 5,
+      price: 40,
+      beds: 2,
+      img_url: 'https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?dpr=1&auto=compress,format&fit=crop&w=1350&h=&q=80&cs=tinysrgb&crop='
+    },
+    {
+      title: "Refurbished Van- Plush Interior",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 37.37233994582318,
+      lng: -122.39233016967773,
+      host_id: 8,
+      price: 45,
+      beds: 1,
+      img_url: 'https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?dpr=1&auto=compress,format&fit=crop&w=1350&h=&q=80&cs=tinysrgb&crop='
+    },
+    {
+      title: "Custom-Built Shed",
+      description: "Come take part in the big wall Climbing Experience!  We'll rappell down the wall in the evening, and spend the night suspended thousands of feet above the valley floor.  A once-in-a-lifetime adventure.",
+      lat: 37.56417412088097,
+      lng: -121.45849227905273,
+      host_id: 6,
+      price: 50,
+      beds: 3,
+      img_url: 'https://images.unsplash.com/8/green-bike.jpg?dpr=1&auto=compress,format&fit=crop&w=1353&h=&q=80&cs=tinysrgb&crop='
+    },
     ])
