@@ -9,6 +9,11 @@ class User < ApplicationRecord
  has_many :spots
  has_many :reviews
 
+ has_many :bookings
+ has_many :booked_spots,
+ through: :bookings,
+ source: :spot
+
  def reset_session_token!
    self.session_token = SecureRandom.urlsafe_base64(16)
    self.save!

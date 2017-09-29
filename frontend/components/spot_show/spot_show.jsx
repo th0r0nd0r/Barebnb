@@ -102,7 +102,7 @@ class SpotShow extends React.Component {
               Update Spot
             </button>
           </Link>
-          <button onClick={this.delete}>
+          <button className="session-submit-button" onClick={this.delete}>
             Delete Spot
           </button>
         </div>
