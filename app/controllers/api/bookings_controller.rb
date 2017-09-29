@@ -13,7 +13,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.includes(:guest, :spot).find_by_guest(params[:userId])
+    @bookings = Booking.includes(:guest, :spot).find_by_guest(params[:user_id])
     render :index
   end
 
@@ -29,6 +29,7 @@ class Api::BookingsController < ApplicationController
     else
       render json: ["Looks like someone's already booked those dates!"],
       status: 422
+    end
   end
 
   def destroy
