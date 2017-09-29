@@ -64,6 +64,10 @@ export const updateSpot = spot => dispatch => (
   err => (dispatch(receiveErrors(err.responseJSON)))
 );
 
+export const deleteSpot = id => dispatch => (
+  APIUtil.deleteSpot(id)
+);
+
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(
     newReview => {

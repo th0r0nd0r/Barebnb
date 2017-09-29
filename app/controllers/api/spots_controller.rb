@@ -29,6 +29,11 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+  def destroy
+    @spot = Spot.find(params[:id])
+    @spot.destroy!
+  end
+
 
 
   def spot_params

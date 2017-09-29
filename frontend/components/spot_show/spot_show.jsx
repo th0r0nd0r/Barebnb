@@ -18,6 +18,8 @@ class SpotShow extends React.Component {
     this.state = {
       host: {}
     };
+
+    this.delete = this.delete.bind(this);
   }
 
   componentWillMount() {
@@ -61,6 +63,12 @@ class SpotShow extends React.Component {
     }
   }
 
+  delete(e) {
+    e.preventDefault();
+    this.props.deleteSpot(this.props.spotId)
+    .then(() => this.props.history.push("/"));
+  }
+
   render() {
     const { spotId, spot, getSpot, getUser } = this.props;
     const spots = {
@@ -90,10 +98,13 @@ class SpotShow extends React.Component {
 
         <div className="spot-buttons">
           <Link to={`/spots/${spotId}/update`}>
-            <button className="session-button">
+            <button className="session-submit-button">
               Update Spot
             </button>
           </Link>
+          <button onClick={this.delete}>
+            Delete Spot
+          </button>
         </div>
       </div>
     );

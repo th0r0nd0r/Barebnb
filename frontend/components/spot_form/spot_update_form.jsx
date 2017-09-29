@@ -31,21 +31,20 @@ class SpotForm extends React.Component {
       });
       return newSpot;
     })
+    .then((authSpot) => {
+      console.log("authSpot", authSpot);
+      if (this.props.currentUser.id !== authSpot.spot.host_id) {
+        this.props.history.push("/");
+      } else {
+        return authSpot;
+      }
+    })
     .then((coordsSpot) => {
       console.log("coordsSpot:", coordsSpot);
       console.log("AAAAAAAAAAAAAAAAAAAAAAAA", "CORDLAT", coordsSpot.spot.lat);
       this.coords = { lat: coordsSpot.spot.lat, lng: coordsSpot.spot.lng};
 
     });
-    // .then((authSpot) => {
-    //   console.log("authSpot", authSpot);
-    //   if (this.props.currentUser.id !== authSpot.spot.host_id) {
-    //     this.props.history.push("/");
-    //   } else {
-    //     return authSpot;
-    //   }
-    // })
-    // window.addEventListener("hashchange", this.updateCoords);
   }
 
   // componentWillUnmount() {
