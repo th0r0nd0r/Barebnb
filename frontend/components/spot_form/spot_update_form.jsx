@@ -19,7 +19,7 @@ class SpotForm extends React.Component {
     this.updateCoords = this.updateCoords.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     console.log("mounted");
     this.props.getSpot(this.props.spotId).then((newSpot) => {
       this.setState({
@@ -31,6 +31,12 @@ class SpotForm extends React.Component {
       });
       return newSpot;
     })
+    .then((coordsSpot) => {
+      console.log("coordsSpot:", coordsSpot);
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAA", "CORDLAT", coordsSpot.spot.lat);
+      this.coords = { lat: coordsSpot.spot.lat, lng: coordsSpot.spot.lng};
+
+    });
     // .then((authSpot) => {
     //   console.log("authSpot", authSpot);
     //   if (this.props.currentUser.id !== authSpot.spot.host_id) {
@@ -39,11 +45,6 @@ class SpotForm extends React.Component {
     //     return authSpot;
     //   }
     // })
-    .then((coordsSpot) => {
-      console.log("coordsSpot:", coordsSpot);
-        this.coords = { lat: coordsSpot.spot.lat, lng: coordsSpot.spot.lng};
-
-    });
     // window.addEventListener("hashchange", this.updateCoords);
   }
 
@@ -85,8 +86,12 @@ class SpotForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const spot = Object.assign({}, this.state, this.coords, {host_id: this.props.spot.host_id});
-    this.props.updateSpot({spot}).then((newSpot) => (this.navigateToShow(newSpot)));
+    const spot = Object.assign({}, this.state, this.coords, {
+      host_id: this.props.currentUser.id,
+      id: parseInt(this.props.spotId)
+    });
+    console.log("PAAAAATCH", spot);
+    this.props.updateSpot({spot}).then(() => this.navigateToShow(spot));
   }
 
   renderErrors() {

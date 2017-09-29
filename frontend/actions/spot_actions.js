@@ -59,8 +59,8 @@ export const createSpot = spot => dispatch => (
  }, err => (dispatch(receiveErrors(err.responseJSON))))
 );
 
-const updateSpot = spot => dispatch => (
-  APIUtil.updateSpot(spot).then(() => getSpots()),
+export const updateSpot = spot => dispatch => (
+  APIUtil.updateSpot(spot).then(updated => dispatch(receiveSpot(updated))),
   err => (dispatch(receiveErrors(err.responseJSON)))
 );
 
