@@ -4,6 +4,18 @@ Barebnb is a peer-to-peer space sharing app that allows users to host and book s
 
 ![index-img](https://user-images.githubusercontent.com/29419913/31039056-5a55d904-a52f-11e7-8f90-5bccdad285d3.png)
 
+link to live site: https://barebnb.herokuapp.com/#/
+
+## How To Use
+
+Either follow the link to the live site, or:
+
+- Clone this repository
+- Run `npm install`
+- Start up your server with `rails s`
+- navigate to `localhost:3000` in your browser
+- you're in business!
+
 ## Technology
 Barebnb uses Ruby on Rails for the backend, Postgres for database management, and Reactjs and google maps API on the frontend.
 
