@@ -80,6 +80,7 @@ export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 ```
 
 If a user is logged in, the component renders as normal. Otherwise, the user is redirected to the landing page.
+
 Ok, but what if we need to check if a particular user is logged in, for instance to show them buttons to edit and delete a review they've authored.  Easy! Enter conditional rendering:
 
 ```javascript
@@ -129,7 +130,7 @@ Here, as soon as the component mounts, it calls a getSpot action to update it's 
 
 ![history-redirect-demo](https://user-images.githubusercontent.com/29419913/31048302-43801668-a5cf-11e7-849d-9ebb0054fc15.gif)
 
-Side note: since calling the getSpot action makes an asynchronous ajax request to the database, we have to chain the authentication check onto the action, to make sure we actually have the spot we're checking against.
+Side note: since calling the getSpot action makes an asynchronous ajax request to the database, we have to chain the authentication check onto the action, to make sure we actually have access to the spot we're checking against.
 
 Ok so that's a lot of rerouting.  But there's still one more situation we haven't dealt wit yet! There are some components in the app that don't have routes at all.  The login form, for example, is mounted inside a modal.  Normally we would just click the associated button to open it up, but picture this:  
 
