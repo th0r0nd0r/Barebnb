@@ -25,7 +25,7 @@ class Review extends React.Component {
 
   maybeButtons() {
     const {id, body, rating, authorId } = this.props;
-    if (this.props.authorId === this.props.currentUser.id) {
+    if ( this.props.currentUser && (this.props.authorId === this.props.currentUser.id)) {
       return(
         <div className="edit-delete-review-buttons">
           <ReviewEditFormContainer id={id} body={body} rating={rating} />

@@ -9,8 +9,16 @@ const SpotsReducer = (state = {}, action) => {
     case RECEIVE_SPOTS:
       return action.spots;
     case RECEIVE_SPOT:
+    console.log("newState:", newState);
+      const spotId = action.spot.id;
       const newSpot = {[action.spot.id]: action.spot};
-      return merge({}, newState, newSpot);
+      console.log("hasspotid", Boolean(newState[spotId]));
+      if (newState[spotId]) {
+        newState[spotId] = action.spot;
+        return newState;
+      } else {
+        return merge({}, newState, newSpot);
+      }
     case RECEIVE_REVIEW:
       const review = action.review;
       // const user = review.user;

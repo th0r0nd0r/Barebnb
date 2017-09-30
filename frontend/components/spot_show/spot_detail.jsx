@@ -58,6 +58,7 @@ class SpotDetail extends React.Component {
 
   render() {
     console.log("host:", this.props.host);
+    console.log("spotdetailprops:", this.props);
     const spot = this.props.spot;
     const host = this.props.host;
     // const reviewCount = spot.reviews.length;

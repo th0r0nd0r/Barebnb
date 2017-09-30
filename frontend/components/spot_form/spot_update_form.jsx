@@ -20,7 +20,6 @@ class SpotForm extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
     this.props.getSpot(this.props.spotId).then((newSpot) => {
       this.setState({
         title: newSpot.spot.title,
@@ -32,7 +31,6 @@ class SpotForm extends React.Component {
       return newSpot;
     })
     .then((authSpot) => {
-      console.log("authSpot", authSpot);
       if (this.props.currentUser.id !== authSpot.spot.host_id) {
         this.props.history.push("/");
       } else {
@@ -84,6 +82,7 @@ class SpotForm extends React.Component {
 
 
   handleSubmit(e) {
+    console.log("updateformProps:", this.props);
     e.preventDefault();
     const spot = Object.assign({}, this.state, this.coords, {
       host_id: this.props.currentUser.id,
@@ -138,6 +137,7 @@ class SpotForm extends React.Component {
                   className="input-field"
                   type="text"
                   placeholder="Number of beds (includes hammocks, cots, etc.)"
+                  value={beds}
                   onChange={this.update('beds')}
                   />
                 <br/>
@@ -145,6 +145,7 @@ class SpotForm extends React.Component {
                   className="input-field"
                   type="text"
                   placeholder="Price per night"
+                  value={price}
                   onChange={this.update('price')}
                   />
                 <br/>

@@ -1,3 +1,6 @@
+// The Auth and Protected route strategies were adopted from
+// AppAcademy's Benchbnb project.
+
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import React from 'react';

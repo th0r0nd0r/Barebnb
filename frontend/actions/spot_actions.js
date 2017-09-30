@@ -60,8 +60,8 @@ export const createSpot = spot => dispatch => (
 );
 
 export const updateSpot = spot => dispatch => (
-  APIUtil.updateSpot(spot).then(updated => dispatch(receiveSpot(updated))),
-  err => (dispatch(receiveErrors(err.responseJSON)))
+  APIUtil.updateSpot(spot).then(updated => dispatch(receiveSpot(updated)))
+  .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const deleteSpot = id => dispatch => (
