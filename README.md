@@ -144,7 +144,7 @@ Here, as soon as the component mounts, it calls a getSpot action to update it's 
 
 Side note: since calling the getSpot action makes an asynchronous ajax request to the database, we have to chain the authentication check onto the action, to make sure we actually have access to the spot we're checking against.
 
-Ok so that's a lot of rerouting.  But there's still one more situation we haven't dealt wit yet! There are some components in the app that don't have routes at all.  The login form, for example, is mounted inside a modal.  Normally we would just click the associated button to open it up, but picture this:  
+Ok so that's a lot of rerouting.  But there's still one more situation we haven't dealt with yet! There are some components in the app that don't have routes at all.  The login form, for example, is mounted inside a modal.  Normally we would just click the associated button to open it up, but picture this:  
 
 You're a user who hasn't signed in.  You want to host your sweet porch for $10 a night, so you click on create a spot.  But that route is protected, so the page doesn't load.  So you've just clicked a button that's completely useless! Nothing changes on the page and you get so frustrated you move your business over to Sparebnb, or Sharebnb, or Aupairbnb.  
 
