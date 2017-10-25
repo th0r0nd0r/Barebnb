@@ -1,6 +1,6 @@
 # README
 
-#### Link to live site: https://barebnb.herokuapp.com/#/
+### Live Link: https://barebnb.herokuapp.com/#/
 
 Barebnb is a peer-to-peer space sharing app that allows users to host and book simple spots: camper vans, hammocks, barns, anywhere you can curl up for the night.
 
