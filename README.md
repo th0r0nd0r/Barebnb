@@ -112,7 +112,7 @@ maybeButtons() {
   }
 ```
 
-![buttons](https://user-images.githubusercontent.com/29419913/31048266-a1675300-a5ce-11e7-9981-53b0830e1757.png)
+![buttons](https://user-images.githubusercontent.com/29419913/32071509-63906a14-ba44-11e7-9737-464acce2475a.png)
 
 Now, the buttons only show up for the review's author.  
 But, how do we prevent one user from, say, deleting another user's spot? Couldn't they just enter the url manually?  
