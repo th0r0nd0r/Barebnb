@@ -5,7 +5,7 @@ import SpotMap from '../spot_map/spot_map';
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log("lat:", this.props.lat);
+    // console.log("lat:", this.props.lat);
     this.coords = {lat: 0, lng: 0};
     this.state = {
       title: '',
@@ -38,8 +38,8 @@ class SpotForm extends React.Component {
       }
     })
     .then((coordsSpot) => {
-      console.log("coordsSpot:", coordsSpot);
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAA", "CORDLAT", coordsSpot.spot.lat);
+      // console.log("coordsSpot:", coordsSpot);
+      // console.log("AAAAAAAAAAAAAAAAAAAAAAAA", "CORDLAT", coordsSpot.spot.lat);
       this.coords = { lat: coordsSpot.spot.lat, lng: coordsSpot.spot.lng};
 
     });
@@ -56,8 +56,8 @@ class SpotForm extends React.Component {
   }
 
   updateCoords(nextProps) {
-    console.log("form history:", nextProps.history);
-    console.log("new coords:", this.coords);
+    // console.log("form history:", nextProps.history);
+    // console.log("new coords:", this.coords);
 
     this.coords = {lat: new URLSearchParams(nextProps.history.location.search).get("lat"),
     lng: new URLSearchParams(nextProps.history.location.search).get("lng")};
@@ -82,13 +82,13 @@ class SpotForm extends React.Component {
 
 
   handleSubmit(e) {
-    console.log("updateformProps:", this.props);
+    // console.log("updateformProps:", this.props);
     e.preventDefault();
     const spot = Object.assign({}, this.state, this.coords, {
       host_id: this.props.currentUser.id,
       id: parseInt(this.props.spotId)
     });
-    console.log("PAAAAATCH", spot);
+    // console.log("PAAAAATCH", spot);
     this.props.updateSpot({spot}).then(() => this.navigateToShow(spot));
   }
 

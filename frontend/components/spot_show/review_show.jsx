@@ -19,7 +19,7 @@ class Review extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log("clicked:", this.props.getSpot);
+    // console.log("clicked:", this.props.getSpot);
     this.props.deleteReview(this.props.id);
   }
 

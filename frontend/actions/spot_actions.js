@@ -71,7 +71,7 @@ export const deleteSpot = id => dispatch => (
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(
     newReview => {
-      console.log("newReview:", newReview);
+      // console.log("newReview:", newReview);
     return(() => dispatch(receiveReview(newReview)));
 })
   .fail(err => (dispatch(receiveErrors(err.responseJSON))))
@@ -79,7 +79,7 @@ export const createReview = review => dispatch => (
 
 export const updateReview = review => dispatch => (
   APIUtil.updateReview(review).then(updatedReview => {
-    // console.log("updatedReview:", updatedReview);
+    // // console.log("updatedReview:", updatedReview);
     return(dispatch(patchReview(updatedReview)));
   })
     .fail(err => (dispatch(receiveErrors(err.responseJSON))))

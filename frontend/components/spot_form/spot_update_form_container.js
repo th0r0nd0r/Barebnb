@@ -7,9 +7,9 @@ import { selectSpot } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match, location }) => {
   const spotId = match.params.spotId;
-  console.log("container spotId:", spotId);
-  console.log("container match:", match);
-  console.log("map lat", new URLSearchParams(location.search).get("lat"));
+  // console.log("container spotId:", spotId);
+  // console.log("container match:", match);
+  // console.log("map lat", new URLSearchParams(location.search).get("lat"));
   return {
   lat: new URLSearchParams(location.search).get("lat"),
   lng: new URLSearchParams(location.search).get("lng"),

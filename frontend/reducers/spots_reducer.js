@@ -9,10 +9,8 @@ const SpotsReducer = (state = {}, action) => {
     case RECEIVE_SPOTS:
       return action.spots;
     case RECEIVE_SPOT:
-    console.log("newState:", newState);
       const spotId = action.spot.id;
       const newSpot = {[action.spot.id]: action.spot};
-      console.log("hasspotid", Boolean(newState[spotId]));
       if (newState[spotId]) {
         newState[spotId] = action.spot;
         return newState;

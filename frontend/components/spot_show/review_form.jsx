@@ -26,7 +26,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const currentUser = this.props.currentUser;
-    console.log("currentUser:", this.props.currentUser);
+    // console.log("currentUser:", this.props.currentUser);
     const review = Object.assign({}, this.state, {
       spot_id: spotId,
       author_id: currentUser.id
@@ -37,14 +37,14 @@ class ReviewForm extends React.Component {
   }
 
   update(field) {
-    console.log("field:", field );
+    // console.log("field:", field );
     return e => {
-      console.log("currentTarget", e.currentTarget.value);
+      // console.log("currentTarget", e.currentTarget.value);
       this.setState({[field]: e.currentTarget.value});};
   }
 
   renderErrors() {
-    console.log("errors:", this.props.errors);
+    // console.log("errors:", this.props.errors);
     return(
       <ul>
         {this.props.errors.map((error, i) => (

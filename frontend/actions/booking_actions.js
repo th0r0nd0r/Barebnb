@@ -5,12 +5,12 @@ export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 
 export const receiveBookings = bookings => ({
-  tyipe: RECEIVE_BOOKINGS,
+  type: RECEIVE_BOOKINGS,
   bookings
 });
 
 export const receiveBooking = booking => ({
-  tyipe: RECEIVE_BOOKING,
+  type: RECEIVE_BOOKING,
   booking
 });
 

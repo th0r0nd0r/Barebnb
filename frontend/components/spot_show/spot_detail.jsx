@@ -7,7 +7,7 @@ import Review from './review_show';
 
 
 const ratingStyle = {
-  color: 'yellow'
+  color: '#487AB4'
 };
 
 
@@ -27,11 +27,11 @@ class SpotDetail extends React.Component {
   }
 
   reviewList(reviews = []) {
-    // console.log("reviews:", reviews);
+    // // console.log("reviews:", reviews);
     // debugger;
     if (reviews.length > 0) {
       return reviews.map(review => {
-        console.log("review:", review);
+        // console.log("review:", review);
         return(<Review
           spotId={this.props.spot.id}
           id={review.id}
@@ -55,10 +55,17 @@ class SpotDetail extends React.Component {
     return reviews.length;
   }
 
+  reviews(spot) {
+    if (this.reviewCount(spot.reviews) === 1) {
+      return "Review";
+    } else {
+      return "Reviews";
+    }
+  }
 
   render() {
-    console.log("host:", this.props.host);
-    console.log("spotdetailprops:", this.props);
+    // console.log("host:", this.props.host);
+    // console.log("spotdetailprops:", this.props);
     const spot = this.props.spot;
     const host = this.props.host;
     // const reviewCount = spot.reviews.length;
@@ -73,6 +80,8 @@ class SpotDetail extends React.Component {
             <h1 className="spot-show-title">{spot.title}</h1>
           <Rating
               className="rating"
+              empty="fa fa-star-o fa-2x"
+              full="fa fa-star fa-2x"
               style={ratingStyle}
               initialRate={parseFloat(spot.averageRating)}
               readonly={true}
@@ -97,7 +106,7 @@ class SpotDetail extends React.Component {
         </div>
         <hr className="hr" />
         <div className="spot-show-text-container">
-          <h1 className="reviews-title">{this.reviewCount(spot.reviews)} Reviews</h1>
+          <h1 className="reviews-title">{this.reviewCount(spot.reviews)} {this.reviews(spot)}</h1>
         {this.reviewList(spot.reviews)}
         </div>
       </div>

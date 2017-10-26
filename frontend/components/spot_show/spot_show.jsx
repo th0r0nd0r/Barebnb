@@ -24,7 +24,7 @@ class SpotShow extends React.Component {
   }
 
   componentWillMount() {
-    // console.log("premount props:", this.props);
+    // // console.log("premount props:", this.props);
     this.props.getSpot(this.props.match.params.spotId).then((action) => {
       this.props.getUser(action.spot.host_id)
       .then((user) => this.setState({host: user}));
@@ -33,13 +33,13 @@ class SpotShow extends React.Component {
   }
 
   componentDidMount() {
-    // console.log("pprops:", this.props);
-    // console.log("sspot:", this.props.spot);
-    // console.log("host_id", this.props.spot.host_id);
-    // console.log("postmount host:", this.state.host);
+    // // console.log("pprops:", this.props);
+    // // console.log("sspot:", this.props.spot);
+    // // console.log("host_id", this.props.spot.host_id);
+    // // console.log("postmount host:", this.state.host);
     window.scrollTo(0,0);
     // this.props.getSpot().then((spot) => this.state.host = this.props.getUser(spot.host_id))
-    //   .then(console.log("propsafterdispatch:", this.props, "host:", this.state.host));
+    //   .then(// console.log("propsafterdispatch:", this.props, "host:", this.state.host));
   }
 
   linkOrModal(currentUser, spotId) {

@@ -19,7 +19,7 @@ class SpotMap extends React.Component {
   }
 
   componentDidMount() {
-    console.log("map props:", this.props);
+    // // console.log("map props:", this.props);
     const map = this.refs.map;
     if (this.props.singleSpot) {
       this.props.getSpot(this.props.spotId);
@@ -35,7 +35,7 @@ class SpotMap extends React.Component {
 
   componentDidUpdate() {
     if (this.props.singleSpot) {
-      // console.log("propspots:", this.props.spots);
+      // // console.log("propspots:", this.props.spots);
       const targetSpotKey = Object.keys(this.props.spots)[0];
       const targetSpot = this.props.spots[targetSpotKey];
 
@@ -43,16 +43,16 @@ class SpotMap extends React.Component {
         center: {lat: targetSpot.lat, lng: targetSpot.lng},
         zoom: 12
       };
-      // console.log("spotfromstate:", this.state.spot);
-      // console.log("spot:", this.props.getSpot(this.props.spotId));
-      // console.log("targetSpotKey:", targetSpotKey);
-      // console.log("targetSpot:", targetSpot);
-      // console.log(targetSpot);
-      // console.log("lat:", targetSpot.lat);
-      // console.log("lng:", targetSpot.lng);
-      // console.log(mapOptions);
+      // // console.log("spotfromstate:", this.state.spot);
+      // // console.log("spot:", this.props.getSpot(this.props.spotId));
+      // // console.log("targetSpotKey:", targetSpotKey);
+      // // console.log("targetSpot:", targetSpot);
+      // // console.log(targetSpot);
+      // // console.log("lat:", targetSpot.lat);
+      // // console.log("lng:", targetSpot.lng);
+      // // console.log(mapOptions);
       this.map = new google.maps.Map(this.mapNode, singleSpotOptions);
-      // console.log(this.map);
+      // // console.log(this.map);
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers([targetSpot]);
     } else if (this.props.updateFilter) {

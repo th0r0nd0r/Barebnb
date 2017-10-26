@@ -79,7 +79,7 @@ class ReviewEditForm extends React.Component {
       id
     });
     this.props.clearErrors();
-    console.log("to update:", review);
+    // console.log("to update:", review);
     this.props.updateReview({review})
     .then(() => {
       if (this.props.errors.length === 0) {
@@ -89,14 +89,14 @@ class ReviewEditForm extends React.Component {
   }
 
   update(field) {
-    // console.log("field:", field );
+    // // console.log("field:", field );
     return e => {
-      console.log("currentTarget", e.currentTarget.value);
+      // console.log("currentTarget", e.currentTarget.value);
       this.setState({[field]: e.currentTarget.value});};
   }
 
   renderErrors() {
-    // console.log("errors:", this.props.errors);
+    // // console.log("errors:", this.props.errors);
     return(
       <ul>
         {this.props.errors.map((error, i) => (
