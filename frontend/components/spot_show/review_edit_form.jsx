@@ -135,6 +135,9 @@ class ReviewEditForm extends React.Component {
               <Rating
                 onChange={(rate) => this.setState({rating: rate})}
                 initialRate={this.state.rating}
+                empty="fa fa-star-o fa-2x"
+                full="fa fa-star fa-2x"
+                style={{color: '#8BB7DE'}}
                 />
               <br />
               <label className="spot-show-body">Review</label>

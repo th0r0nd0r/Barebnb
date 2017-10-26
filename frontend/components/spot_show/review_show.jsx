@@ -46,6 +46,9 @@ class Review extends React.Component {
         <div className="review-info">
           <div className="rating-and-buttons">
             <Rating className="rating"
+              empty="fa fa-star-o fa-2x"
+              full="fa fa-star fa-2x"
+              style={{color: '#8BB7DE'}}
               initialRate={rating}
               readonly={true}
               />

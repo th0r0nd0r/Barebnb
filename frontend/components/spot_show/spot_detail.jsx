@@ -7,7 +7,7 @@ import Review from './review_show';
 
 
 const ratingStyle = {
-  color: '#487AB4'
+  color: '#8BB7DE'
 };
 
 
