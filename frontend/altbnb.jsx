@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded',() => {
   }
   const root = document.getElementById('root');
 
-  window.login = login;
-  window.signup = signup;
-  window.logout = logout;
-  window.fetchSpots = fetchSpots;
-  window.getSpots = getSpots;
+//   window.login = login;
+//   window.signup = signup;
+//   window.logout = logout;
+//   window.fetchSpots = fetchSpots;
+//   window.getSpots = getSpots;
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+//   window.getState = store.getState;
+//   window.dispatch = store.dispatch;
 
 
   ReactDOM.render(<Root store={ store } />, root);
